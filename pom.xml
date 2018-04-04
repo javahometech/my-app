@@ -4,12 +4,9 @@
 	<groupId>in.javahome</groupId>
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
-	<version>0.13.0-SNAPSHOT</version>
-	<name>myweb aplication</name>
-	<url>http://maven.apache.org</url>
-	<properties>
-		<docker.image.prefix>kammana</docker.image.prefix>
-	</properties>	
+	<version>0.0.1</version>
+	<name>my-app</name>
+	<url>http://maven.apache.org</url>	
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -26,38 +23,7 @@
 			<scope>test</scope>
 		</dependency>
 	
-		<dependency>
-		    <groupId>com.itextpdf</groupId>
-		    <artifactId>itextpdf</artifactId>
-		    <version>5.0.6</version>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.apache.poi</groupId>
-		    <artifactId>poi</artifactId>
-		    <version>3.7</version>
-		</dependency>
-
-
-		<!-- <dependency>
-		  <groupId>org.sonarsource.java</groupId>
-		  <artifactId>sonar-jacoco-listeners</artifactId>
-		  <version>3.8</version>
-		  <scope>test</scope>
-		</dependency> -->
 	</dependencies>
-	
-	<distributionManagement>
-		 <snapshotRepository>
-		    <id>snapshots</id>
-		    <url>http://52.33.227.37:8081/nexus/content/repositories/snapshots</url>
-		 </snapshotRepository>
-		
-		<repository>
-		    <id>releases</id>
-		    <url>http://52.33.227.37:8081/nexus/content/repositories/releases</url>
-		</repository>
-  	</distributionManagement>
 	
 <build>
     <plugins>
@@ -75,23 +41,6 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>2.19</version>
         </plugin>
-	    <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.4.11</version>
-                <configuration>
-                    <imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
-                    <dockerDirectory>.</dockerDirectory>
-                    <serverId>docker-hub</serverId>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.war</include>
-                        </resource>
-                    </resources>
-                </configuration>
-            </plugin>
     </plugins>
 </build>
 	
