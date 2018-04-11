@@ -12,8 +12,5 @@ node{
       Thanks
       Hari''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'hari.kammana@gmail.com'
    }
-   stage('Slack_notification'){
-      slackSend baseUrl: 'https://hooks.slack.com/services/', botUser: true, channel: '#jenkins-pipeline-demo', color: 'good', message: 'Welcome to jenkins, Slack!', teamDomain: 'javahomecloud', tokenCredentialId: 'slack-demo'
-   }
 
 }
