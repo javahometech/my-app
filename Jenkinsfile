@@ -14,10 +14,8 @@ node{
    }
    stage('Slack_notification'){
        slackSend baseUrl: 'https://hooks.slack.com/services/', 
-                 color: 'good', 
-                 message: 'Welcome to jenkins, Slack!',
-                 teamDomain: 'javahomecloud',
-                 tokenCredentialId: 'slack-demo'
+                 botUser: true,color: 'good', message: 'Welcome to jenkins, Slack!', teamDomain: 'javahomecloud', tokenCredentialId: 'slack-demo'
+
    }
 
 }
