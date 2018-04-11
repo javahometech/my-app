@@ -11,7 +11,13 @@ node{
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
       Thanks
       Hari''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'hari.kammana@gmail.com'
-
+   }
+   stage('Slack_notification'){
+       slackSend baseUrl: 'https://hooks.slack.com/services/', 
+                 color: 'good', 
+                 message: 'Welcome to jenkins, Slack!',
+                 teamDomain: 'javahomecloud',
+                 tokenCredentialId: 'slack-demo'
    }
 
 }
