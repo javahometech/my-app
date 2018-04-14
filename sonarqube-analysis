@@ -12,7 +12,7 @@ node{
      def mvnHome =  tool name: 'maven-3', type: 'maven'   
    
      withCredentials([string(credentialsId: 'sonarqube-token', variable: 'sonarToken')]) {
-     def sonarCMD = "sonar:sonar -Dsonar.host.url=http://35.154.40.90:9000 -Dsonar.login=${credentialsId}"
+     def sonarCMD = "sonar:sonar -Dsonar.host.url=http://35.154.40.90:9000 -Dsonar.login=${sonarToken}"
      sh "${mvnHome}/bin/mvn ${sonarCMD}"
    }
    }
