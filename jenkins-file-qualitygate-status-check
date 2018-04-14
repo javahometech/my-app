@@ -28,7 +28,7 @@ node{
           }
     }
   }
-  stage('QualityGate Status Check'){
+  stage('Set Build Status'){
       status = getQualityGateStatus()
       if(! "SUCCESS".equals(status)){
           error "Qualitygates Failed"
