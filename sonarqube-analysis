@@ -8,14 +8,13 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    
-   stage('SonarQube Analysis'){
-     def mvnHome =  tool name: 'maven-3', type: 'maven'   
-   
-     withCredentials([string(credentialsId: 'sonarqube-token', variable: 'sonarToken')]) {
-     def sonarCMD = "sonar:sonar -Dsonar.host.url=http://35.154.40.90:9000 -Dsonar.login=${sonarToken}"
-     sh "${mvnHome}/bin/mvn ${sonarCMD}"
-   }
-   }
+   stage('SonarQube Analysis') {
+        def mvnHome =  tool name: 'maven-3', type: 'maven'   
+        sh "${mvnHome}/bin/mvn package"
+        withSonarQubeEnv('Sonar') { 
+          sh "${mvnHome}/bin/mvn sonar:sonar"
+        }
+    }
    
    stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
