@@ -8,8 +8,9 @@ node{
       sh "${mvnHome}/bin/mvn package"
    }
    stage('Deploy to Tomcat'){
-      sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.29.242:/tmp/'
-   
+      sshagent(['tomcat-dev']) {
+          sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.29.242:/tmp/'
+      }
    }
    stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
