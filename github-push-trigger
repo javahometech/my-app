@@ -4,6 +4,6 @@ node{
         git url:'https://github.com/javahometech/my-app', branch: 'master'
     }
     stage('Welcome'){
-        print "Build Got triggered"
+        print "Build Got triggered, tested"
     }
 }
