@@ -1,4 +1,4 @@
-properties([parameters([choice(choices: ['master', 'feature-1', 'feature-2'], description: 'Choose the branch to build', name: 'branch')]), 
+properties([parameters([choice(choices: 'master\nfeature-1\nfeature-2', description: 'Choose the branch to build', name: 'branch')]), 
 
 pipelineTriggers([pollSCM('')])])
 
