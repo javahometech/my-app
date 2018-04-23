@@ -6,7 +6,8 @@
 	<packaging>war</packaging>
 	<version>0.0.1</version>
 	<name>my-app</name>
-	<url>http://maven.apache.org</url>	
+	<url>http://maven.apache.org</url>
+	<!-- Push trigger Demo-->
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
