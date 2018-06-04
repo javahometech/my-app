@@ -5,7 +5,8 @@
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1</version>
-	<name>my-app<name>
+	<name>my-app</name>
+	<hari> Hari </hari>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
