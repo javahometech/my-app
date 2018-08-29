@@ -7,12 +7,12 @@
 	<version>0.0.1</version>
 	<name>my-app</name>
 	<url>http://maven.apache.org</url>
-	<javahome>Hello<j/avahome>
+
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-			<version>3.0.1</version>
+			<version>3.0.16789</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
