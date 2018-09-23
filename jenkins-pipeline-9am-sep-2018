@@ -1,6 +1,6 @@
 try{
 	node{
-    stage('Git Checkout, ')
+    stage('Git Checkout,')
     {
 		git credentialsId: 'github', 
 		    url: 'https://github.com/javahometech/my-app',
