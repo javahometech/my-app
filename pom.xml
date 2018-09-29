@@ -5,9 +5,8 @@
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1</version>
-	<name>my-app</name>
-	
-	<hari>my-app</hari>
+	<name>my-app<name>
+
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
