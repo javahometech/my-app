@@ -1,11 +1,6 @@
 node {
-    checkout scm 
-    /* .. snip .. */
-    echo "${env.BRANCH_NAME}"
-    stage('Deploy') {
-            
-            for(def branch: scm.branches){
-              echo branch.name
-            }
-        }
+    
+    def scmVars = checkout scm
+    def commitHash = scmVars.GIT_COMMIT
+    echo commitHash
 }
