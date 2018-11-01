@@ -1,8 +1,9 @@
 node {
     checkout scm 
     /* .. snip .. */
+    echo "${env.BRANCH_NAME}"
     stage('Deploy') {
-            echo "${BRANCH_NAME}"
+            
             for(def branch: scm.branches){
               echo branch.name
             }
