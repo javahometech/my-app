@@ -20,7 +20,7 @@ public class CalculatorTest extends TestCase {
 		try
 		{
 
-			output = new FileOutputStream("config.properties");
+			output = new FileOutputStream("../config.properties");
 
 			// set the properties value
 			prop.setProperty("database", "localhost");
