@@ -4,7 +4,7 @@ node {
     stage('Deploy') {
             def branchName = env.BRANCH_NAME
             for(def branch: scm.branches){
-              echo branch
+              echo branch.name
             }
         }
 }
