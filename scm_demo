@@ -3,6 +3,6 @@ node {
     /* .. snip .. */
     stage('Deploy') {
             def branchName = env.BRANCH_NAME
-            echo "${branchName}"
+            echo scm.branches
         }
 }
