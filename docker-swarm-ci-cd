@@ -1,0 +1,41 @@
+node{
+  def pom = readMavenPom file: 'pom.xml'
+  def version = pom.version
+  def nexus_tag = "172.31.24.222:8083/myweb:${version}"
+  def mvnHome = tool name: 'maven-3', type: 'maven'
+  def mvn = "${mvnHome}/bin/mvn"
+  stage('SCM Checkout'){
+    git 'https://github.com/javahometech/my-app'
+  }
+  stage('Maven Build'){
+    sh "${mvn} clean package"
+	sh 'mv target/myweb*.war  target/myweb.war'
+  }
+  
+  stage('Docker Build'){
+	
+    sh "docker build -t ${nexus_tag} ."
+  }
+  
+  stage('Push to Nexus'){
+	sh "docker login 172.31.24.222:8083 -u admin -p admin123"
+	sh "docker push ${nexus_tag}"
+  }
+  
+  stage('Deploy to swarm'){
+	try{
+	   def service =  "docker service create -d -p 90:8080 --replicas=7 --name=myweb ${nexus_tag}"
+	   sshagent (credentials: ['docker-swarm-manager']) {
+	   def svs = "ec2-user@13.233.223.243 ${service}"
+       sh "ssh -o StrictHostKeyChecking=no  ${svs}"
+      }
+	}catch(e){
+	   def service =  "docker service update  --image=${nexus_tag} myweb"
+	   sshagent (credentials: ['docker-swarm-manager']) {
+	   def svs = "ec2-user@13.233.223.243 ${service}"
+       sh "ssh -o StrictHostKeyChecking=no  ${svs}"
+	
+		}
+	}
+  }
+}
