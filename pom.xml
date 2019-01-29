@@ -8,7 +8,7 @@
 	<name>my-app</name>
 
 	<url>http://maven.apache.org</url>
-
+	<!--test-->
 	<dependencies>
 		<dependency>
 			<groupId>javax.servlet</groupId>
