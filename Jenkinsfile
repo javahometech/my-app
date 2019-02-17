@@ -8,9 +8,9 @@
       sh "${mvnHome}/bin/mvn package"
    }
    stage('Email Notification'){
-      mail bcc: '', body: '''Hi Welcome to jenkins email alerts
+      mail bcc: '', body: '''Build is done
       Thanks
-      Hari''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'prabaharanitlearn@gmail.com'
+      prabha''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'prabaharanitlearn@gmail.com'
    }
 }
 
