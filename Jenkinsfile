@@ -7,8 +7,10 @@ node{
     stage ('maven build'){
       sh 'mvn package'
     }
-  
-  
+  stage ('email-notification'){
+    
+  emailext body: 'welcome to jenkins', subject: '', to: 'chowdaryharish0@gmail.com'
+  }
 }
 
 
