@@ -14,9 +14,7 @@ node{
    stage ('package'){
     sh 'mvn package'
   }
-    stage ('sonar-qube analysis'){
-  withsonarQube ENV('sonar-6')
-}
+   
   
      stage ('deploy to tomcat'){
        
@@ -29,7 +27,9 @@ node{
     mail bcc: '', body: '''welcome to jenkins
  hai hello''', cc: '', from: '', replyTo: '', subject: '', to: 'chowdaryharish0@gmail.com'
   }
-  
+   stage ('sonar-qube analysis'){
+  withsonarQube ENV('sonar-6')
+}
    
 }
   
