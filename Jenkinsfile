@@ -13,8 +13,8 @@ node{
   }
   
    stage ('sonar-qube analysis'){
-     withsonarQubeEnv('sonar6'){
-       sh "${mvnHome}/bin/mvn sonar:sonar"
+     withsonarQube('sonar6'){
+  
        
      }
 }
