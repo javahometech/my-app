@@ -12,8 +12,7 @@ node{
     sh 'mvn package'
   }
   
-   stage ('sonar-qube analysis'){
-     withsonarQube('sonar6')
+  
      stage ('deploy to tomcat'){
        
        sshagent(['9a0d6629-cf54-46ea-ada4-59b490e03e54']) {
