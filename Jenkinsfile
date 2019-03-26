@@ -13,7 +13,7 @@ node{
   }
   
    stage ('sonar-qube analysis'){
-     withsonarQube('sonar6'){
+     withsonarQubeEnv('sonar6'){
   
        
      }
