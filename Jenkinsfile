@@ -2,6 +2,11 @@ node{
   stage ('scm checkout'){
     git 'https://github.com/harikrishhh/my-app'
   }
+  stage ('sonar-qube analysis'){
+  withsonarQube ENV('sonar-6')
+}
+   
+  
   stage ('compile'){
   sh 'mvn compile'
 }
@@ -24,9 +29,7 @@ node{
     mail bcc: '', body: '''welcome to jenkins
  hai hello''', cc: '', from: '', replyTo: '', subject: '', to: 'chowdaryharish0@gmail.com'
   }
-   stage ('sonar-qube analysis'){
-  withsonarQube ENV('sonar-6')
-}
+  
    
 }
   
