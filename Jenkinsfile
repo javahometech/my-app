@@ -22,9 +22,7 @@ node{
     sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.191.83.92:/home/ec2-user/tomcat8/webapps'
 }
      }
-       stage ('sonar-qube analysis'){
-  withsonarQube('sonar7')
-}
+   
    
    
 }
