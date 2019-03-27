@@ -23,7 +23,9 @@ node{
 }
      }
        
-  
+   stage ('sonar-qube analysis'){
+  withsonarQubeEnv('sonar')
+}
    
 }
   
