@@ -24,7 +24,7 @@ node{
      }
        
    stage ('sonar-qube analysis'){
-  withsonarQube('sonar')
+  withsonarQube('sonarqube')
 }
    
 }
