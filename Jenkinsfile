@@ -22,7 +22,7 @@ node{
      }
    
   stage ('build docker image'){
-   sh 'docker build -t  
+   sh 'docker build -t chaitu9642/my-app:5.0.0 .'  
   }
    
 }
