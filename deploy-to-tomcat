@@ -1,3 +1,6 @@
+
+this is the udpated file
+
 node{
    def tomcatIp = '172.31.14.131'
    def tomcatUser = 'ec2-user'
