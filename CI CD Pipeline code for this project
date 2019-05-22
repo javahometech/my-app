@@ -32,22 +32,58 @@ node{
       sh label: '', script: 'sudo docker push ankit4550/my-app:${BUILD_NUMBER}' 
     }
     stage('Run Container on Dev Server'){
-        def dockerRun = 'sudo docker run -p ${BUILD_NUMBER}:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:${BUILD_NUMBER}'
-        sshagent(['dev-server']) {
-       sh "ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 ${dockerRun}"
-     }
+            def dockerRun = 'sudo docker run -p 8085:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:${BUILD_NUMBER}'
+            try{
+                sshagent(['dev-server']){
+                def remove_container = 'sudo docker rm -f $(ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 sudo docker ps -a -q)'
+                def remove_images = 'sudo docker rmi -f $(ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 sudo docker images -a -q)'
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 ${remove_container}"
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 ${remove_images}"
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 sleep 20"
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 ${dockerRun}"
+                }
+            }
+            catch(Exception e){
+                sshagent(['dev-server']){
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.121.109.165 ${dockerRun}"
+            }
+        }
     }
-     stage('Run Container on QA Server'){
-        def dockerRun = 'sudo docker run -p ${BUILD_NUMBER}:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:${BUILD_NUMBER}'
-        sshagent(['dev-server']) {
-       sh "ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 ${dockerRun}"
-       }
+    stage('Run Container on QA Server'){
+        def dockerRun = 'sudo docker run -p 8085:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:${BUILD_NUMBER}'
+        try{
+                sshagent(['dev-server']){
+                def remove_container = 'sudo docker rm -f $(ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 sudo docker ps -a -q)'
+                def remove_images = 'sudo docker rmi -f $(ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 sudo docker images -a -q)'
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 ${remove_container}"
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 ${remove_images}"
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 sleep 20"
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 ${dockerRun}"
+                }
+            }
+            catch(Exception e){
+                sshagent(['dev-server']){
+                sh "ssh -o StrictHostKeyChecking=no ankit@40.76.218.4 ${dockerRun}"
+            }
+        }
     }
     stage('Run Container on PROD Server'){
-        def dockerRun = 'sudo docker run -p ${BUILD_NUMBER}:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:${BUILD_NUMBER}'
-        sshagent(['dev-server']) {
-       sh "ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 ${dockerRun}"
-       }
+        def dockerRun = 'sudo docker run -p 8085:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:${BUILD_NUMBER}'
+       try{
+                sshagent(['dev-server']){
+                def remove_container = 'sudo docker rm -f $(ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 sudo docker ps -a -q)'
+                def remove_images = 'sudo docker rmi -f $(ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 sudo docker images -a -q)'
+                sh "ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 ${remove_container}"
+                sh "ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 ${remove_images}"
+                sh "ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 sleep 20"
+                sh "ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 ${dockerRun}"
+                }
+            }
+            catch(Exception e){
+                sshagent(['dev-server']){
+                sh "ssh -o StrictHostKeyChecking=no ankit@23.96.33.42 ${dockerRun}"
+            }
+        }
     }
      stage('Email Notification'){
         mail bcc: '', body: 'This is jenkins pipeline', cc: 'ankit.singh@globant.com', from: '', replyTo: '', subject: 'Jenkins', to: 'ankit.singh@globant.com'
