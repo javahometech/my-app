@@ -1,6 +1,7 @@
 
 node {
-   
+   def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
+   def mvn = tool (name: 'maven3', type: 'maven') + '/bin/mvn'
    stage('SCM Checkout'){
     // Clone repo
 	git branch: 'master', 
@@ -10,14 +11,17 @@ node {
    }
    
    stage('Sonar Publish'){
-      // lets do
+	   withCredentials([string(credentialsId: 'sonarqube', variable: 'sonarToken')]) {
+        def sonarToken = "sonar.login=${sonarToken}"
+        sh "${mvn} sonar:sonar -D${sonarUrl}  -D${sonarToken}"
+	 }
+      
    }
-   
    
 	
    stage('Mvn Package'){
 	   // Build using maven
-	   def mvn = tool (name: 'maven3', type: 'maven') + '/bin/mvn'
+	   
 	   sh "${mvn} clean package deploy"
    }
    
