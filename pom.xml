@@ -4,16 +4,22 @@
 	<groupId>in.javahome</groupId>
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.1</version>
+	<version>0.0.5</version>
 	<name>my-app</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
 		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.7</version>
+		</dependency>
+
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
-			<scope>provided</scope>
+			<!-- <scope>provided</scope> -->
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -23,6 +29,17 @@
 		</dependency>
 	
 	</dependencies>
+	<distributionManagement>
+		 <snapshotRepository>
+		    <id>nexus</id>
+		    <url>http://13.233.125.37:8081/repository/maven-snapshots/</url>
+		 </snapshotRepository>
+		
+		<repository>
+		    <id>nexus</id>
+		    <url>http://13.233.125.37:8081/repository/maven-releases/</url>
+		</repository>
+  	</distributionManagement>
 	
 <build>
     <plugins>

@@ -1,0 +1,31 @@
+node{
+    def mvnHome = tool name: 'maven-3', type: 'maven'
+    def mvn = "${mvnHome}/bin/mvn"
+	def tomcatUsr = 'ec2-user'
+    stage('Git Checkout'){
+	   git branch: 'master', 
+	       credentialsId: 'github', 
+		   url: 'https://github.com/javahometech/my-app'
+	}
+	
+	stage('Build'){
+	   sh "${mvn} clean package"   
+	}
+	stage('deploy-to-dev'){
+	  sh 'mv target/myweb*.war target/myweb.war'
+	  sshagent(['tomcat-dev']) {
+		sh "ssh -o StrictHostKeyChecking=no ${tomcatUsr}@172.31.12.253 /opt/tomcat8/bin/shutdown.sh"
+		sh "ssh ${tomcatUsr}@172.31.12.253 rm -rf /opt/tomcat8/webapps/myweb*"
+		sh "scp target/myweb.war ${tomcatUsr}@172.31.12.253:/opt/tomcat8/webapps/"
+        sh "ssh ${tomcatUsr}@172.31.12.253 /opt/tomcat8/bin/startup.sh"
+		mail bcc: '', 
+			  body: '''myweb app deployed to Dev
+						Thanks
+						DevOps''', 
+			  cc: '', 
+			  from: '', replyTo: '', 
+			  subject: 'myweb app deployed to Dev', 
+			  to: 'hari.kammana@gmail.com'
+	  }
+	}
+}
