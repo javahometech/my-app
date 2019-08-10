@@ -6,6 +6,15 @@ node{
        //get maven home path
        def mvnhome = tool name: 'maven3', type: 'maven'
        sh "${mvnhome}/bin/mvn package"
-
+    }
+    stage('slack-notification'){
+    slackSend baseUrl: 'https://hooks.slack.com/services/',
+    channel: 'jenkinsdemo',
+    color: 'good', 
+    iconEmoji: '', 
+    message: 'welcome to jenkins slack', 
+    teamDomain: 'ravijenkins',
+    tokenCredentialId: 'slackdemo', 
+    username: ''
     }
 }
