@@ -1,3 +1,3 @@
 FROM tomcat:8
 # Take the war and copy to webapps of tomcat
-COPY target/*.war /usr/local/tomcat/webapps/
+COPY target/*.war /home/ec2-user/tomcat/webapps/
