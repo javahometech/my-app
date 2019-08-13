@@ -7,6 +7,14 @@ node{
        def mvnhome = tool name: 'maven3', type: 'maven'
        sh "${mvnhome}/bin/mvn package"
     }
+    
+     stage('Deploy to Tomcat'){
+      
+     sshagent(['tomcat-dev']) {
+        sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@13.235.42.90:/opt/tomcat8/webapps/'
+      }
+    }
+    
     stage('slack-notification'){
     slackSend baseUrl: 'https://hooks.slack.com/services/',
     channel: 'jenkinsdemo',
