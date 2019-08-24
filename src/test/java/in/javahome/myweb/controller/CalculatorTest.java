@@ -60,6 +60,6 @@ public class CalculatorTest extends TestCase {
 		Assert.assertEquals(cal.multiply(40, 20), 800);
 	}
 	public void testMultiply4() {
-		Assert.assertEquals(cal.multiply(50, 20), 800);
+		Assert.assertEquals(cal.multiply(50, 20), 1000);
 	}
 }
