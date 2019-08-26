@@ -51,7 +51,7 @@ public class CalculatorTest extends TestCase {
 		Assert.assertEquals(cal.multiply(10, 20), 200);
 	}
 	public void testMultiply1() {
-		Assert.assertEquals(cal.multiply(20, 20), 300);
+		Assert.assertEquals(cal.multiply(20, 20), 400);
 	}
 	public void testMultiply2() {
 		Assert.assertEquals(cal.multiply(30, 20), 600);
