@@ -1,0 +1,45 @@
+
+node{
+    stage('scm checkout'){
+        git 'https://github.com/Ankit4550/my-app.git'
+    }
+    stage('Maven Build'){
+        sh label: '', script: 'mvn clean package -Dmaven.test.failure.ignore=true'
+    }
+    stage('SonarQube'){
+        withSonarQubeEnv('sonar'){
+           sh label: '', script: 'mvn clean package sonar:sonar -Dmaven.test.failure.ignore=true'
+        }
+    }
+    stage('archive'){
+        parallel(
+          "Junit": {
+            junit 'target/surefire-reports/*.xml'
+            
+          },
+          "Archive": {
+            archiveArtifacts(artifacts: 'target/myweb-0.0.5.war', onlyIfSuccessful: true, fingerprint: true)
+          }
+        )
+    }
+    stage('Build Docker Image'){
+     sh label: '', script: 'sudo docker build -t ankit4550/my-app:my-app-${BUILD_NUMBER} .'
+   }
+   stage('Push Docker Image'){
+       //withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
+       sh label: '', script: 'sudo docker login -u ankit4550 -p Meetu@1234'
+      //}
+        sh label: '', script: 'sudo docker push ankit4550/my-app:my-app-${BUILD_NUMBER}'   
+   }
+   stage('Run Container on Dev Server'){
+       try{
+           sh label: '', script: 'sudo docker rm -f $(sudo docker ps -a -q)'
+           sh label: '', script: 'sudo docker rmi -f $(sudo docker images -a -q)'
+           sh label: '', script: 'sudo docker run -p 8085:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:my-app-${BUILD_NUMBER}'
+       }
+       catch(Exception e)
+       {
+           sh label: '', script: 'sudo docker run -p 8085:8080 -d --name my-app${BUILD_NUMBER} ankit4550/my-app:my-app-${BUILD_NUMBER}'
+       }
+   }
+}
