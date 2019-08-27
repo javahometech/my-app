@@ -51,15 +51,15 @@ public class CalculatorTest extends TestCase {
 		Assert.assertEquals(cal.multiply(10, 20), 100);
 	}
 	public void testMultiply1() {
-		Assert.assertEquals(cal.multiply(20, 20), 400);
+		Assert.assertEquals(cal.multiply(20, 20), 100);
 	}
 	public void testMultiply2() {
-		Assert.assertEquals(cal.multiply(30, 20), 600);
+		Assert.assertEquals(cal.multiply(30, 20), 100);
 	}
 	public void testMultiply3() {
-		Assert.assertEquals(cal.multiply(40, 20), 800);
+		Assert.assertEquals(cal.multiply(40, 20), 100);
 	}
 	public void testMultiply4() {
-		Assert.assertEquals(cal.multiply(50, 20), 1000);
+		Assert.assertEquals(cal.multiply(50, 20), 100);
 	}
 }
