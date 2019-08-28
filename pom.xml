@@ -4,7 +4,7 @@
 	<!--<groupId>in.javahome</groupId>-->
 	<groupId>com.areyes1.jgc.itest</groupId>
 	<artifactId>junit-integration-tests</artifactId>
-	<artifactId>myweb</artifactId>
+	<!--<artifactId>myweb</artifactId>-->
 	<packaging>war</packaging>
 	<version>0.0.5</version>
 	<name>my-app</name>
