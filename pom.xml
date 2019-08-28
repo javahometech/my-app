@@ -67,20 +67,20 @@
                <testFailureIgnore>true</testFailureIgnore>
             </configuration>
             <version>2.19</version>
-         <executions> 
-	<execution> 
-		<id>integration-test</id> 
-		<goals> 
-			<goal>integration-test</goal> 
-		</goals> 
-	</execution> 
-	<execution> 
+            <executions> 
+	    	<execution> 
+			<id>integration-test</id> 
+			<goals> 
+				<goal>integration-test</goal> 
+			</goals> 
+		</execution> 
+	    <execution> 
 		<id>verify</id> 
 		<goals> 
 			<goal>verify</goal> 
 		</goals> 
-	</execution> 
-  </executions>
+	    </execution> 
+         </executions>
         </plugin>
     </plugins>
 </build>
