@@ -2,7 +2,7 @@
 <modelVersion>4.0.0</modelVersion>
 <groupId>org.jacoco</groupId>
 <artifactId>org.jacoco.examples.maven</artifactId>
-<version>0.8.5-SNAPSHOT</version>
+<version>0.8.5</version>
 <packaging>jar</packaging>
 <name>JaCoCo Maven plug-in example</name>
 <url>http://www.jacoco.org/jacoco</url>
@@ -23,7 +23,7 @@
 <plugin>
 <groupId>org.jacoco</groupId>
 <artifactId>jacoco-maven-plugin</artifactId>
-<version>0.8.5-SNAPSHOT</version>
+<version>0.8.5</version>
 <executions>
 <execution>
 <id>default-prepare-agent</id>
