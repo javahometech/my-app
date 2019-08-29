@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<!--<groupId>in.javahome</groupId>-->
-	<groupId>com.areyes1.jgc.itest</groupId>
-	<artifactId>junit-integration-tests</artifactId>
+	<groupId>org.jacoco</groupId>
+	<artifactId>org.jacoco.examples.maven</artifactId>
 	<!--<artifactId>myweb</artifactId>-->
-	<packaging>war</packaging>
-	<version>0.0.5</version>
+	<packaging>jar</packaging>
+	<version>0.8.5-SNAPSHOT</version>
 	<name>my-app</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.jacoco.org/jacoco</url>
 
 	<dependencies>
 		<dependency>
