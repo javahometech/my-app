@@ -1,6 +1,6 @@
 
 node {
-   def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
+   def sonarUrl = 'sonar.host.url=http://172.31.15.90:9000'
    def mvn = tool (name: 'maven3', type: 'maven') + '/bin/mvn'
    stage('SCM Checkout'){
     // Clone repo
@@ -24,7 +24,8 @@ node {
 	   
 	   sh "${mvn} clean package deploy"
    }
-   
+  //Deployment to Tomcat 	
+  /*
    stage('deploy-dev'){
        def tomcatDevIp = '172.31.28.172'
 	   def tomcatHome = '/opt/tomcat8/'
@@ -38,13 +39,15 @@ node {
 		  sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
        }
    }
+   */
+	
    stage('Email Notification'){
 		mail bcc: '', body: """Hi Team, You build successfully deployed
 		                       Job URL : ${env.JOB_URL}
 							   Job Name: ${env.JOB_NAME}
 
 Thanks,
-DevOps Team""", cc: '', from: '', replyTo: '', subject: "${env.JOB_NAME} Success", to: 'hari.kammana@gmail.com'
+DevOps Team""", cc: '', from: '', replyTo: '', subject: "${env.JOB_NAME} Success", to: 'sudharsansadasivam@gmail.com'
    
    }
 }
