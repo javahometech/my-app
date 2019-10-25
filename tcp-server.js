@@ -6,8 +6,18 @@ var stringify = require('json-stringify-safe');
 
 var server = net.createServer(function(socket) {
     /* get IP address of local host */
-    var netinfo = os.networkInterfaces();
-    var IP = netinfo.eth0[0].address;
+    var interfaces = os.networkInterfaces();
+    var addresses = [];
+    for (var k in interfaces) {
+        for (var k2 in interfaces[k]) {
+            var address = interfaces[k][k2];
+            if (address.family === 'IPv4' && !address.internal) {
+                addresses.push(address.address);
+            }
+        }
+    }
+    
+    var IP = addresses[0];
     var strIP = stringify(IP);
 
     socket.write(strIP);
