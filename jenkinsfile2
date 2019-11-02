@@ -5,8 +5,8 @@ node{
     
         stage ('compile-package') {
         //get maven home
-        def mvnhome: 'tool' name: 'apache-maven-3.6.2', type: 'maven'
-        sh "$(mvnhome)/bin/mvn package"
+        def mvnhome = 'tool' name: 'apache-maven-3.6.2', type: 'maven'
+        sh "${mvnhome}/bin/mvn package"
     }
     
         stage ('deploy to tomcat'){
