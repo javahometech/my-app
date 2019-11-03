@@ -1,10 +1,10 @@
 node{
-    stage ('scm checkout') {
+    stage ('scm checkout'){
         git 'https://github.com/ravi-dev/my-app'
     }
     
-        stage ('compile-package') {
-        //get maven home
+        stage ('compile-package'){
+        //get maven home path
         def mvnhome = 'tool' name: 'apache-maven-3.6.2', type: 'maven'
         sh "${mvnhome}/bin/mvn package"
     }
