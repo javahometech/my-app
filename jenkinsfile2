@@ -7,4 +7,10 @@ node{
        def mvnhome = tool name: 'maven3', type: 'maven'
        sh "${mvnhome}/bin/mvn package"
     }
+    stage('Deploy to Tomcat'){
+      
+     sshagent(['tomcat-dev']) {
+        sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@13.232.210.200:/root/etc/tomcat8/webapps'
+      }
+    }  
 }
