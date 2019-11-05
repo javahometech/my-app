@@ -8,8 +8,7 @@
 	<name>my-app</name>
 	<url>http://maven.apache.org</url>
 	
-	<!-- Demo to demo jhioljhpo;-->
-
+	
 	<dependencies>
 		<dependency>
 		    <groupId>org.apache.poi</groupId>
