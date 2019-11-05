@@ -8,7 +8,7 @@
 	<name>my-app</name>
 	<url>http://maven.apache.org</url>
 	
-	<!-- Demo-->
+	<!-- Demo to demo-->
 
 	<dependencies>
 		<dependency>
