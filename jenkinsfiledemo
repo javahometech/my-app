@@ -12,4 +12,5 @@ node {
     sshagent(['tomcat-dev']){
       sh 'ssh -o StrictHostKeyChecking=no target/*.war ec2-user@15.206.146.49:/root/etc/tomcat8/webapps'
     }
+    }
 }
