@@ -7,6 +7,7 @@ node{
     
     import jenkins.model.*
     import org.jenkinsci.plugins.ghprb.*
+    echo imports
 
     GhprbTrigger.DescriptorImpl descriptor = Jenkins.instance.getDescriptorByType(org.jenkinsci.plugins.ghprb.GhprbTrigger.DescriptorImpl.class)
 
