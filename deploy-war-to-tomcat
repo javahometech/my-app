@@ -10,7 +10,7 @@ node{
    stage('Deploy to Tomcat'){
       
       sshagent(['tomcat-dev']) {
-         sh 'scp -o StrictHostKeyChecking=no target/*.war ubuntu@172.31.6.132:/opt/tomcat8/webapps/'
+         sh 'scp -o StrictHostKeyChecking=no target/*.war HemanthReddy@172.31.6.132:/opt/tomcat8/webapps/'
       }
    }
    stage('Email Notification'){
