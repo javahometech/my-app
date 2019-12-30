@@ -10,7 +10,7 @@ node{
    stage('Deploy to Tomcat'){
       
       sshagent(['HemanthReddy-node-credentials']) {
-         sh 'scp -o StrictHostKeyChecking=no target/*.war HemanthReddy@172.31.6.132:/opt/tomcat/webapps/'
+         sh 'scp -o StrictHostKeyChecking=no webapp/target/*.war HemanthReddy@172.31.6.132:/opt/tomcat/webapps/'
       }
    }
    stage('Email Notification'){
