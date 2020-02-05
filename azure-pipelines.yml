@@ -21,3 +21,8 @@ steps:
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml' 
+
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: current
+    artifact: 'myweb.war'
