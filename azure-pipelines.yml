@@ -22,6 +22,9 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml' 
 
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: myweb'
+  condition: succeeded()
 
 - task: DownloadPipelineArtifact@2
   inputs:
