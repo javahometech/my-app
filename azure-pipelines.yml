@@ -24,11 +24,14 @@ steps:
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: myweb'
+  inputs:
+    targetPath: '$(Pipeline.Workspace)' 
+    artifactName: "myweb.war"
   condition: succeeded()
 
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: current
-    artifact: 'myweb-0.0.7-SNAPSHOT.war'
+    artifact: 'myweb.war'
 
 
