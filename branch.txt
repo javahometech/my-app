@@ -1,0 +1,11 @@
+ Volume in drive C has no label.
+ Volume Serial Number is D290-578E
+
+ Directory of C:\Users\Git\my-app1
+
+21/03/2020  22:56    <DIR>          .
+21/03/2020  22:56    <DIR>          ..
+21/03/2020  22:56                 0 branch.txt
+21/03/2020  22:18                59 test.txt
+               2 File(s)             59 bytes
+               2 Dir(s)  876,180,234,240 bytes free
