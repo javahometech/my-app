@@ -8,6 +8,7 @@ node {
    sh 'pwd'
    
    }
+   
  
    stage('Email Notification'){
 		mail bcc: '', body: '''Hai, welcome to Jenkins email alerts
@@ -15,4 +16,9 @@ node {
     Navya''', cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'navyasree068@gmail.com'
    
    }
+   
+   stage('Slack Notification'){
+   slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: 'good', message: 'welcome to jenkins slack', teamDomain: 'javahomecloud', tokenCredentialId: 'slack-demo'
+   
+ }
 }
