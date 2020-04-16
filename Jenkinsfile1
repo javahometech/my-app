@@ -3,6 +3,11 @@ node {
    stage('SCM Checkout'){
     url: 'https://github.com/javahometech/myweb'
    }
+   stage('text'){
+   echo "navya"
+   sh 'pwd'
+   
+   }
  
    stage('Email Notification'){
 		mail bcc: '', body: '''Hai, welcome to Jenkins email alerts
