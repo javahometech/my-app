@@ -3,9 +3,7 @@ node {
    stage('SCM Checkout'){
     url: 'https://github.com/javahometech/myweb'
    }
-   stage('List'){
-   sh "$ls -lrt"
-   }
+ 
    stage('Email Notification'){
 		mail bcc: '', body: """Hi Team, You build successfully deployed
 		                       Job URL : ${env.JOB_URL}
