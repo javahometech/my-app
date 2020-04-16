@@ -5,8 +5,10 @@ pipeline {
     url: 'https://github.com/javahometech/myweb'
    }
    stage('text'){
+   steps {
    echo "navya"
    sh 'pwd'
+   }
    }
    
    stage('Email Notification'){
