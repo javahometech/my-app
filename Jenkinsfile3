@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    stages {
+   stage('text'){
+   steps {
+   echo "navya"
+   sh 'pwd'
+   }
+   }
+ }
+ post {
+    success {
+        setBuildStatus("Build succeeded", "SUCCESS");
+    }
+    failure {
+        setBuildStatus("Build failed", "FAILURE");
+    }
+  }
+}
