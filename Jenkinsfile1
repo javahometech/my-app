@@ -21,12 +21,5 @@ node {
    slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: 'good', message: 'welcome to jenkins slack', teamDomain: 'javahomecloud', tokenCredentialId: 'slack-demo'
    
  }
- post {
-    success {
-        setBuildStatus("Build succeeded", "SUCCESS");
-    }
-    failure {
-        setBuildStatus("Build failed", "FAILURE");
-    }
-  }
+ 
 }
