@@ -3,7 +3,7 @@ node {
    stage('SCM Checkout'){
     url: 'https://github.com/javahometech/myweb'
    }
-   stage('text'){
+   stage('Text'){
    echo "navya"
    sh 'pwd'
    
