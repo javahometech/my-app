@@ -1,0 +1,6 @@
+node{
+
+   stage('SCM Checkout'){
+     git 'https://github.com/Sreedhar-Muktham/my-app'
+   }
+}
