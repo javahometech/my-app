@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-      
+      //github project URL
      git 'https://github.com/Sreedhar-Muktham/my-app'
    }
    stage('Compile-Package'){
