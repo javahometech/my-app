@@ -8,12 +8,7 @@ pipeline{
             steps{
                 echo "this is a pull request"
             }
-        }
-        stage('Merge Pull Request'){
-            steps{
-                $class: 'GhprbPullRequestMerge'
-            }
-        }
+       
     }   
 }        
     
