@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage('Run on PR'){
-            when{ changeRequest() }
+            when { changeRequest target: 'master' }.
                 expression { env.CHANGE_ID ==~ /.*/ }
             }
             steps{
