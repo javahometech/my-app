@@ -9,6 +9,7 @@ pipeline{
                 echo "this is a pull request"
             }
         }
+        stage()
         
         
     }
