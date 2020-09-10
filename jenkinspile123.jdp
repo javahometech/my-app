@@ -1,0 +1,18 @@
+pipeline{
+    agent any
+    stages{
+        stage('Run on PR'){
+            when {
+                expression { env.CHANGE_ID ==~ /.*/ }
+            }
+            steps{
+                echo "this is a pull request"
+            }
+        }
+        stage('Merge'){
+            steps{
+                
+            }
+        }
+    }
+}
