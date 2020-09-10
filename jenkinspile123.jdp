@@ -14,7 +14,7 @@ pipeline{
                 $class: 'GhprbPullRequestMerge'
             }
         }
-        
-        
-    }
+    }   
+}        
+    
 }
