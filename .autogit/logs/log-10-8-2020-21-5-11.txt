@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Thu Sep 10 2020 21:05:11 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/logs/log-10-8-2020-21-4-57.txt
+
+
+Deleted files:
+
+
+Renamed files:
