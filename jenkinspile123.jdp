@@ -10,8 +10,8 @@ pipeline{
             }
         }
         stage('Merge'){
-            steps{
-                
+            step([$class: 'GhprbPullRequestMerge'
+
             }
         }
     }
