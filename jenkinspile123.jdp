@@ -13,8 +13,7 @@ pipeline{
             steps{
                     $class: 'GhprbPullRequestMerge'
                 
-                
-        }            
+                }            
         }
         
     }
