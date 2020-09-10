@@ -1,0 +1,34 @@
+-------------------- Auto-Git Log --------------------
+		Thu Sep 10 2020 14:29:22 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/autogit.json
+* .autogit/logs/log-10-8-2020-14-13-19.txt
+* .autogit/logs/log-10-8-2020-14-13-39.txt
+* .autogit/logs/log-10-8-2020-14-14-19.txt
+* .autogit/logs/log-10-8-2020-14-14-29.txt
+* .autogit/logs/log-10-8-2020-14-14-39.txt
+* .autogit/logs/log-10-8-2020-14-15-29.txt
+* .autogit/logs/log-10-8-2020-14-20-59.txt
+* .autogit/logs/log-10-8-2020-14-21-10.txt
+* .autogit/logs/log-10-8-2020-14-21-20.txt
+* .autogit/logs/log-10-8-2020-14-21-29.txt
+* .autogit/logs/log-10-8-2020-14-21-39.txt
+* .autogit/logs/log-10-8-2020-14-21-50.txt
+* .autogit/logs/log-10-8-2020-14-22-20.txt
+* .autogit/logs/log-10-8-2020-14-22-30.txt
+* .autogit/logs/log-10-8-2020-14-22-40.txt
+* .autogit/logs/log-10-8-2020-14-22-50.txt
+* .autogit/logs/log-10-8-2020-14-22-9.txt
+* .autogit/logs/log-10-8-2020-14-23-20.txt
+* .autogit/logs/log-10-8-2020-14-23-30.txt
+
+
+Deleted files:
+
+
+Renamed files:

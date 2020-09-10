@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Thu Sep 10 2020 14:14:29 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+* jenkinspile123.jdp
+
+
+Created files:
+
+
+Deleted files:
+
+
+Renamed files:
