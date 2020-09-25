@@ -1,3 +1,5 @@
+
+
 node('master'){
     // Add maven to path
     env.PATH = "/opt/maven3/bin/:$PATH"
