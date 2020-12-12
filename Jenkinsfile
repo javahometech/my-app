@@ -3,12 +3,6 @@
 pipeline{
     agent any
     stages{
-        stage('SCM'){
-            steps{
-                // git clone/pull
-                git credentialsId: 'github', url: 'https://github.com/javahometech/my-app', branch: 'dev'
-            }
-        }
         
         stage('Mvn Build'){
             steps{
