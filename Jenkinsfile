@@ -4,17 +4,19 @@ pipeline{
     agent any
     stages{
         
-        stage('Mvn Build'){
-            steps{
-                sh 'mvn clean package -Dmaven.test.skip=true'
-            }
-        }
+        
         
         stage('Sonar Analysis'){
             steps{
                 withSonarQubeEnv('sonar7') {
-                    sh 'mvn clean package sonar:sonar'
+                    sh 'mvn sonar:sonar'
                 }
+            }
+        }
+        
+        stage('Mvn Build'){
+            steps{
+                sh 'mvn clean package'
             }
         }
         
