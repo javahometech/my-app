@@ -39,7 +39,7 @@ pipeline{
         }
         stage("Nexus Deploy"){
             steps{
-                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb*.war', type: 'war']], 
+                nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb-0.0.11.war', type: 'war']], 
                                   credentialsId: 'nexus3', 
                                   groupId: 'in.javahome', 
                                   nexusUrl: '172.31.71.247:8081', 
