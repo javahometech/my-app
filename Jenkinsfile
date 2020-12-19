@@ -37,6 +37,15 @@ pipeline{
         }
         
         }
+        stage("Nexus Deploy"){
+            nexusArtifactUploader artifacts: [[artifactId: 'myweb', classifier: '', file: 'target/myweb*.war', type: 'war']], 
+                                  credentialsId: 'nexus3', 
+                                  groupId: 'in.javahome', 
+                                  nexusUrl: '172.31.71.247:8081', 
+                                  nexusVersion: 'nexus3', 
+                                  protocol: 'http', repository: 'javahome-my-app', 
+                                  version: '0.0.11'
+        }
           
         stage('Tomcat Deploy'){
             steps{
