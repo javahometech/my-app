@@ -1,0 +1,8 @@
+node{
+    stage('SCM Checkout'){
+    git 'https://github.com/hareeshsaJ/practice'
+}
+   stage('Comiple-Package'){
+   sh 'mvn package'
+   }
+}
