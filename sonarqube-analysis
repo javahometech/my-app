@@ -4,10 +4,10 @@ node{
    }
    stage('Compile-Package'){
       // Get maven home path
-  mvn sonar:sonar \
-  -Dsonar.projectKey=SastPan \
-  -Dsonar.host.url=http://localhost:8094 \
-  -Dsonar.login=59f18e01ca3ebc486de0970b3ccdb6af7c9bcd09
+  mvn sonar:sonar\
+  Dsonar.projectKey=SastPan\
+  Dsonar.host.url=http://localhost:8094\
+  Dsonar.login=59f18e01ca3ebc486de0970b3ccdb6af7c9bcd09
    }
    
    stage('SonarQube Analysis') {
