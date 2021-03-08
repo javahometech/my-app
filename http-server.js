@@ -39,7 +39,7 @@ app.get('/check500', function (req, res) {
   res.send("501");
 })
 
-var server = app.listen(8080, '0.0.0.0', function () {
+var server = app.listen(80, '0.0.0.0', function () {
 
   var host = server.address().address;
   var port = server.address().port;
