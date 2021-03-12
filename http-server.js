@@ -17,21 +17,25 @@ app.get('/', function (req, res) {
 
 app.get('/check200', function (req, res) {
   res.status(201);
+  sleep(1000);
   res.send("201");
 })
 
 app.get('/check300', function (req, res) {
   res.status(301);
+  sleep(1500);
   res.send("301");
 })
 
 app.get('/check400', function (req, res) {
   res.status(401);
+  sleep(2000);
   res.send("401");
 })
 
 app.get('/check500', function (req, res) {
   res.status(501);
+  sleep(2500);
   res.send("501");
 })
 
