@@ -45,7 +45,11 @@
 		    <url>http://172.31.15.236:8081/repository/maven-releases/</url>
 		</repository>
   	</distributionManagement>
-	
+	<properties>
+  <sonar.projectKey>brunokaique_my-app</sonar.projectKey>
+  <sonar.organization>brunokaique</sonar.organization>
+  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+</properties>
 <build>
     <plugins>
         <plugin>
