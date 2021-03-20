@@ -37,12 +37,12 @@
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>central</id>
-		    <url>http://100.26.179.148:8082/artifactory/My-app2/</url>
+		    <url>http://100.26.179.148:8082/artifactory/My-app/</url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>snapshot</id>
-		    <url>http://100.26.179.148:8082/artifactory/My-app2/</url>
+		    <url>http://100.26.179.148:8082/artifactory/My-app/</url>
 		</repository>
   	</distributionManagement>
 	
@@ -70,14 +70,14 @@
 	<repositories>
     <repository>
         <id>central</id>
-        <url>http://100.26.179.148:8082/artifactory/My-app2</url>
+        <url>http://100.26.179.148:8082/artifactory/My-app</url>
         <snapshots>
             <enabled>false</enabled>
         </snapshots>
     </repository>
     <repository>
         <id>snapshots</id>
-        <url>http://100.26.179.148:8082/artifactory/My-app2</url>
+        <url>http://100.26.179.148:8082/artifactory/My-app</url>
         <releases>
             <enabled>false</enabled>
         </releases>
@@ -86,14 +86,14 @@
 <pluginRepositories>
     <pluginRepository>
         <id>central</id>
-        <url>http://100.26.179.148:8082/artifactory/My-app2</url>
+        <url>http://100.26.179.148:8082/artifactory/My-app</url>
         <snapshots>
             <enabled>false</enabled>
         </snapshots>
     </pluginRepository>
     <pluginRepository>
         <id>snapshots</id>
-        <url>http://100.26.179.148:8082/artifactory/My-app2</url>
+        <url>http://100.26.179.148:8082/artifactory/My-app</url>
         <releases>
             <enabled>false</enabled>
         </releases>
