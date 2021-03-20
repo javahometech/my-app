@@ -37,12 +37,12 @@
 	<distributionManagement>
 		 <snapshotRepository>
 		    <id>jfrog</id>
-		    <url>http://100.26.179.148:8082/artifactory/My-app/</url>
+		    <url>http://100.26.179.148:8082/artifactory/My-app2/</url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>jfrgo</id>
-		    <url>http://100.26.179.148:8082/artifactory/My-app/</url>
+		    <url>http://100.26.179.148:8082/artifactory/My-app2/</url>
 		</repository>
   	</distributionManagement>
 	
