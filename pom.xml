@@ -38,12 +38,12 @@
     <repository>
         <id>central</id>
         <name>ip-172-31-70-223.ec2.internal-releases</name>
-        <url>http://100.26.179.148:8081/artifactory/My-app2</url>
+        <url>http://100.26.179.148:8081/artifactory/My-app2/</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>ip-172-31-70-223.ec2.internal-snapshots</name>
-        <url>http://100.26.179.148:8081/artifactory/My-app2</url>
+        <url>http://100.26.179.148:8081/artifactory/My-app2/</url>
     </snapshotRepository>
 </distributionManagement>
 	
