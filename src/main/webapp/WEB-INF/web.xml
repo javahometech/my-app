@@ -3,6 +3,6 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <hari>JavaHome</hari>
+  <hari>JavaHome<hari>
   <display-name>Archetype Created Web Application</display-name>
 </web-app>
