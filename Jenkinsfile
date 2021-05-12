@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage("Create Folder"){
             steps{
-                sh "mkdir ${env.JOB_NAME}"
+                sh "mkdir -p ${env.JOB_NAME}"
             }
         }
         stage("Maven Build"){
