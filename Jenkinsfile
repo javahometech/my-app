@@ -4,11 +4,6 @@ pipeline{
         maven 'maven3'
     }
     stages{
-        stage("Git Clone/Pull"){
-            steps{
-                git branch: 'master', credentialsId: 'github-acct', url: 'https://github.com/javahometech/my-app'
-            }
-        }
         stage("Maven Build"){
             steps{
                 sh 'mvn clean package'
