@@ -4,6 +4,11 @@ pipeline{
         maven 'maven3'
     }
     stages{
+        stage("Create Folder"){
+            steps{
+                sh "mkdir ${env.JOB_NAME}"
+            }
+        }
         stage("Maven Build"){
             steps{
                 sh 'mvn clean package'
