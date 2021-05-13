@@ -1,3 +1,4 @@
+@Library('javahome-libs') _
 pipeline{
     agent any
     tools{
@@ -16,15 +17,7 @@ pipeline{
         }
         stage("Deploy to Tomcat Dev"){
             steps{
-                sshagent(['tomcat-dev']) {
-                    // rename the war file
-                    sh "mv target/*war target/myweb.war"
-                    // copy war file to tomcat server
-                    sh "scp -o StrictHostKeyChecking=no target/myweb.war ec2-user@172.31.40.104:/opt/tomcat8/webapps"
-                    // stop and start tomcat
-                    sh "ssh ec2-user@172.31.40.104 /opt/tomcat8/bin/shutdown.sh"
-                    sh "ssh ec2-user@172.31.40.104 /opt/tomcat8/bin/startup.sh"
-                }
+                tomcatDeploy('tomcat-dev','ec2-user','172.31.40.104')
             }
         }
     }
