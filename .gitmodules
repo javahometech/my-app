@@ -1,0 +1,3 @@
+[submodule "Terraform-2019jun"]
+	path = Terraform-2019jun
+	url = https://github.com/jenkinsmohan/Terraform-2019jun.git
