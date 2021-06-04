@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /Users/mohanreddybandarupalle/Personal/my-app
-if [[ $(git push ]]
+if [[ $(git push) ]]
 then 
 echo "push executed success"
 else
