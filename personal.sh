@@ -1,9 +1,8 @@
 #!/bin/bash
 cd /Users/mohanreddybandarupalle/Personal/my-app
-if [[ $(git pull ]]
+if [[ $(git push ]]
 then 
-git push
 echo "push executed success"
 else
-echo "push not deleted"
+echo "push not executed"
 fi
