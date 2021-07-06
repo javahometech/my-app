@@ -14,4 +14,8 @@ public class Calculator {
 	public int multiply(int i, int j){
 		return i*j;
 	}
+	public void sonarDemo(){
+		String name = null;
+		name.toString();
+	}
 }
