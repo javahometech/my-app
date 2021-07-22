@@ -29,17 +29,17 @@
 		</dependency>
 	
 	</dependencies>
-	<distributionManagement>
+		<distributionManagement>
 		 <snapshotRepository>
 		    <id>nexus</id>
-		    <url>http://172.31.1.30:8081/repository/my-app-snapshot/</url>
+		    <url>http://15.207.223.123:8081/repository/my-app-snapshot/</url>
 		 </snapshotRepository>
 		
 		<repository>
 		    <id>nexus</id>
-		    <url>http://172.31.1.30:8081/repository/my-app-release/</url>
+		    <url>http://15.207.223.123:8081/repository/my-app-release/</url>
 		</repository>
-  	</distributionManagement>
+	</distributionManagement> 
 	
 <build>
     <plugins>
