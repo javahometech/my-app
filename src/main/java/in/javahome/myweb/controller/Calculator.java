@@ -16,7 +16,7 @@ public class Calculator {
 		return i*j;
 	}
 	
-	public init reminder(int i, int j){
+	public int reminder(int i, int j){
 		return i%j;
 	}
 }
