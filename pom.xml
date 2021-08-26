@@ -32,7 +32,7 @@
 	<distributionManagement>
 		<repository>
 		    <id>nexus</id>
-		    <url>http://172.31.24.175:8081/repository/myapp-release/</url>
+		    <url>http://54.197.176.59:8081/repository/myapp-release/</url>
 		</repository>
   	</distributionManagement>
 	
