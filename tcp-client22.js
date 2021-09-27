@@ -8,7 +8,7 @@ if (IP == '') {
     console.log("Format: node tcp-client.js IP")
     process.exit();
 }
-var client = net.connect(8000, IP,function(){
+var client = net.connect(22, IP,function(){
 
     client.name = 'clinet1';
     //client.write(client.name + ' is up！\n');
