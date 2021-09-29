@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("SCM"){
             steps{
-               echo "job ran....."
+               echo "job ran.....again"
             }
         }
     }
