@@ -11,6 +11,7 @@ node{
    }
    stage('Maven Build'){
         def mvnHome = tool name: 'maven3', type: 'maven'
+	echo new pull
 		sh "${mvnHome}/bin/mvn clean package"
    }
    
