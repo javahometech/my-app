@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+    stages {
+    stage('SCM Checkout'){
+    steps {
+    url: 'https://github.com/javahometech/myweb'
+    }
+   }
+   stage('text'){
+   steps {
+   echo "navya"
+   sh 'pwd'
+   }
+   }
+   
+   stage('Email Notification'){
+   steps {
+		mail bcc: '', body: '''Hai, welcome to Jenkins email alerts
+    Thanks
+    Navya''', cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'navyasree068@gmail.com'
+    }
+   }
+   
+   stage('Slack Notification'){
+   steps {
+   slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: 'good', message: 'welcome to jenkins slack', teamDomain: 'javahomecloud', tokenCredentialId: 'slack-demo'
+ }
+ }
+ }
+ post {
+    success {
+        setBuildStatus("Build succeeded", "SUCCESS");
+    }
+    failure {
+        setBuildStatus("Build failed", "FAILURE");
+    }
+  }
+}

@@ -1,0 +1,32 @@
+node {
+   
+   stage('SCM Checkout'){
+    url: 'https://github.com/javahometech/myweb'
+   }
+   stage('text'){
+   echo "navya"
+   sh 'pwd'
+   
+   }
+   stage('Deploy to Tomcat'){
+      
+      
+      sshagent(['tomcat-dev']) {
+         sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@18.222.134.59:/opt/tomcat8/webapps/'
+    }
+   }
+   
+ 
+   stage('Email Notification'){
+		mail bcc: '', body: '''Hai, welcome to Jenkins email alerts
+    Thanks
+    Navya''', cc: '', from: '', replyTo: '', subject: 'Jenkins job', to: 'navyasree068@gmail.com'
+   
+   }
+   
+   stage('Slack Notification'){
+   slackSend baseUrl: 'https://hooks.slack.com/services/', channel: '#jenkins-pipeline-demo', color: 'good', message: 'welcome to jenkins slack', teamDomain: 'javahomecloud', tokenCredentialId: 'slack-demo'
+   
+ }
+ 
+}
