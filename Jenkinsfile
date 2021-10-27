@@ -1,11 +1,6 @@
 pipeline{
     agent any
     stages{
-        stage("SCM Checkout"){
-            steps{
-                git branch: 'dev', url: 'https://github.com/javahometech/my-app'
-            }
-        }
         
         stage("Maven Build"){
             steps{
