@@ -26,6 +26,7 @@ client.send(data,2222,IP,function(error){
 client.on('message',function(msg,info){
   console.log('Data received from server : ' + msg.toString());
   console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
+  client.close();
 });
 
 var data1 = Buffer.from('hello');
