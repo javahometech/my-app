@@ -17,7 +17,8 @@ server.on('message',function(msg,info){
   console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
 
 //sending msg
-server.send(msg,info.port,'localhost',function(error){
+var msgResponse = 'OK';
+server.send(msgResponse,0,msgResponse.length, info.port,info.address,function(error){
   if(error){
     client.close();
   }else{
@@ -46,6 +47,6 @@ server.on('close',function(){
 
 server.bind(2222);
 
-setTimeout(function(){
-server.close();
-},8000);
+//setTimeout(function(){
+//server.close();
+//},8000);
