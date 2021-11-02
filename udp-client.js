@@ -14,11 +14,6 @@ if (IP == '') {
     process.exit();
 }
 
-client.on('message',function(msg,info){
-  console.log('Data received from server : ' + msg.toString());
-  console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
-});
-
 //sending msg
 client.send(data,2222,IP,function(error){
   if(error){
@@ -26,6 +21,11 @@ client.send(data,2222,IP,function(error){
   }else{
     console.log('Data sent !!!');
   }
+});
+
+client.on('message',function(msg,info){
+  console.log('Data received from server : ' + msg.toString());
+  console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
 });
 
 var data1 = Buffer.from('hello');
