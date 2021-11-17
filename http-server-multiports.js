@@ -14,7 +14,7 @@ function reqHandler(req, res) {
         localPort: req.socket.localPort,
     });
 }
-for (let port = 8001; port <= 8050; port++) {
+for (let port = 8000; port < 8050; port++) {
   s = http.createServer(reqHandler);
   s.listen(port);
   servers.push(s);
