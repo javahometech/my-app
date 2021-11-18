@@ -7,7 +7,7 @@ function reqHandler(req, res) {
   var response = 'Client IP:' + req.socket.remoteAddress + '\n';
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
-  res.end(respose);
+  res.end(response);
   console.log({
         remoteAddress: req.socket.remoteAddress,
         remotePort: req.socket.remotePort,
