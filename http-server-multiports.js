@@ -1,4 +1,5 @@
 var http = require('http');
+var os = require('os');
 
 var servers = [];
 var s;
