@@ -4,7 +4,7 @@ var servers = [];
 var s;
 
 function reqHandler(req, res) {
-  var clientIP = getClientIP(req);
+  var clientIP = getLocalIP();
   var response = 'Client IP:' + clientIP + '\n';
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
@@ -32,4 +32,18 @@ function getClientIP(req) {
 
   return (req.headers['x-forwarded-for'] || '').split(',')[0]
         || req.connection.remoteAddress;
+}
+function getLocalIP() {
+  var interfaces = os.networkInterfaces();
+  var IPv4;
+  for (var devName in interfaces) {
+    var iface = interfaces[devName];
+    for (var i = 0; i < iface.length; i++) {
+      var alias = iface[i];
+      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+        IPv4 = alias.address;
+      }
+    }
+  }
+  return IPv4;
 }
