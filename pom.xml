@@ -5,7 +5,7 @@
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.5</version>
-	<name>my-app</name>
+	<name>xml compression test</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>
