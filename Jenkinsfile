@@ -1,4 +1,4 @@
-
+//welcome//
 node{
   stage('Git Checkout'){
       git credentialsId: 'git-hub', url: 'https://github.com/javahometech/my-app'
