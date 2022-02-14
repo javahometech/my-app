@@ -9,7 +9,7 @@ pipeline {
          }
 	    stage("Docker-Build"){
             steps{
-                sh 'docker build -t sarath818/node-app:v10 .'
+                sh 'docker build -t . sarath818/node-app:v10'
 		withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhubpwd')]) {
                 sh "docker login -u sarath818 -p ${dockerhubpwd}"
 	        sh 'docker push sarath818/node-app:v10'
