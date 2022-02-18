@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+    tools {
+  maven 'maven-3'
+}
+    stages{
+         stage('Git Checkout'){
+             agent{
+                 label 'master'
+             }
+             steps{
+      git url: 'https://github.com/javahometech/my-app'
+      stash 'sourse'
+  }
+         }
+         stage('mvn package'){
+             agent{
+                 label 'slave-one'
+             }
+             steps{
+			 script{
+			     unstash 'source'
+                
+				 
+            sh "${mvnHome}/bin/mvn clean package"
+				   }
+	             }
+               }
+	}
+	}
