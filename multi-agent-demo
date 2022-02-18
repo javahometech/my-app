@@ -9,8 +9,8 @@ pipeline{
                  label 'master'
              }
              steps{
-      git url: 'https://github.com/javahometech/my-app'
-      stash 'sourse'
+      git url: 'https://github.com/sarath818/my-app'
+      stash 'source'
   }
          }
          stage('mvn package'){
@@ -22,7 +22,7 @@ pipeline{
 			     unstash 'source'
                 
 				 
-            sh "${mvnHome}/bin/mvn clean package"
+            sh "mvn clean package"
 				   }
 	             }
                }
