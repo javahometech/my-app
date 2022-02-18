@@ -18,11 +18,11 @@ pipeline{
                  label 'slave-one'
              }
              steps{
-			 script{
-			     unstash 'source'
-                
+			
+                unstash 'source'
+                sh "mvn clean package"
 				 
-            sh "mvn clean package"
+            
 				   }
 	             }
                }
