@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+    stages{
+	    stage("Git Checkout"){
+            steps{
+                git credentialsId: 'github', url: 'https://github.com/Sarath818/my-app'
+            }
+        
+         }
+	    stage("Docker-Build"){
+            steps{
+                sh 'docker build -t . sarath818/node-app:v10'
+		withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerhubpwd')]) {
+                sh "docker login -u sarath818 -p ${dockerhubpwd}"
+		}
+	        sh 'docker push sarath818/node-app:v10'
+                }
+
+            }
+        
+        }
+    }
+ }
+
+

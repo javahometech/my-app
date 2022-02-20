@@ -1,0 +1,30 @@
+pipeline{
+    agent any
+    tools {
+  maven 'maven-3'
+}
+    stages{
+         stage('Git Checkout'){
+             agent{
+                 label 'master'
+             }
+             steps{
+      git url: 'https://github.com/sarath818/my-app'
+      stash 'source'
+  }
+         }
+         stage('mvn package'){
+             agent{
+                 label 'slave-one'
+             }
+             steps{
+			
+                unstash 'source'
+                sh "mvn clean package"
+				 
+            
+				   }
+	             }
+               }
+	}
+	]
