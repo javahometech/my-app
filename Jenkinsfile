@@ -11,11 +11,6 @@ pipeline {
     choice choices: ['develop', 'qa', 'master'], description: 'Choose the branch to build', name: 'branchName'
   }
   stages {
-    stage('Git Clone') {
-      steps {
-        git branch: branchName, credentialsId: 'github', url: 'https://github.com/javahometech/my-app'
-      }
-    }
     stage('Maven Build') {
       steps {
         sh 'mvn clean package'
