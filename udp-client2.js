@@ -8,15 +8,15 @@ var client = udp.createSocket('udp4');
 //buffer msg
 var data = Buffer.from('siddheshrane');
 
-var arguments = process.argv.splice(2);
+var arguments = process.argv[2]
 var IP = arguments.toString();
 if (IP == '') {
     console.log("Format: node udp-client.js IP port")
     process.exit();
 }
 
-arguments = process.argv.splice(3);
-var port = arguments.toString();
+argument2 = process.argv.splice(3);
+var port = argument2.toString();
 if (port == '') {
     console.log("Format: node udp-client.js IP port")
     process.exit();
