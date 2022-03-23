@@ -28,7 +28,7 @@ for (let port = 8000; port < 8050; port++) {
 
   //emits when socket is ready and listening for datagram msgs
   server.on('listening',function() {
-    var address = server.address();
+    var address = this.address();
     var port = address.port;
     var family = address.family;
     var ipaddr = address.address;
