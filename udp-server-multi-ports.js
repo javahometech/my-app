@@ -41,7 +41,7 @@ for (let port = 8000; port < 8050; port++) {
   server.on('close',function() {
     console.log('Socket is closed !');
   });
-  server.bind(2222);
+  server.bind(port);
   servers.push(server);
 }
 
