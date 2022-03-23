@@ -20,7 +20,7 @@ server.on('message',function(msg,info){
 var msgResponse = 'OK';
 server.send(msgResponse,0,msgResponse.length, info.port,info.address,function(error){
   if(error){
-    client.close();
+    server.close();
   }else{
     console.log('Data sent !!!');
   }
