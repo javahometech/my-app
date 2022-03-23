@@ -19,7 +19,7 @@ for (let port = 8000; port < 8050; port++) {
     var msgResponse = 'OK';
     server.send(msgResponse,0,msgResponse.length, info.port,info.address,function(error){
       if(error){
-        client.close();
+        server.close();
       }else{
         console.log('Data sent !!!');
       }
