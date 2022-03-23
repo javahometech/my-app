@@ -33,7 +33,7 @@ client.send(data,port,IP,function(error){
 
 client.on('message',function(msg,info){
   console.log('Data received from server : ' + msg.toString());
-  console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
+  console.log('Received %d bytes from %s\n',msg.length, info.address);
   client.close();
 });
 
