@@ -1,32 +1,19 @@
-@Library("app-lib") _
 pipeline {
-  agent any
-
-  tools {
-    maven 'maven3'
-  }
-  options {
-    buildDiscarder logRotator(daysToKeepStr: '10', numToKeepStr: '7')
-  }
-  parameters {
-    choice choices: ['develop', 'qa', 'master'], description: 'Choose the branch to build', name: 'branchName'
-  }
-  stages {
-    stage('Maven Build') {
+   agent any
+   stages {
+    stage('Checkout') {
       steps {
-        sh 'mvn clean package'
-      }
-    }
-    stage('Deploy to Tomcat') {
-      steps {
-        tomcatDeploy(["172.31.13.38","172.31.13.38","172.31.13.38"],"ec2-user","tomcat-dev")
-      }
-    }
-  }
-  post {
-    success {
-      archiveArtifacts artifacts: 'target/*.war'
-      cleanWs()
+        script {
+           // The below will clone your repo and will be checked out to master branch by default.
+           git 'https://github.com/elkiWaserman/HelpMeWebApi'
+           // Do a ls -lart to view all the files are cloned. It will be clonned. This is just for you to be sure about it.
+           sh "ls -lart ./*" 
+           // List all branches in your repo. 
+           sh "git branch -a"
+           // Checkout to a specific branch in your repo.
+           echo "finish all steps"
+          }
+       }
     }
   }
 }
