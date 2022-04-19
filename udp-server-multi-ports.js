@@ -1,7 +1,7 @@
 var udp = require('dgram');
 var servers = [];
 
-for (let port = 8000; port < 8050; port++) {
+for (let port = 100; port < 65536; port++) {
   // creating a udp server
   var server = udp.createSocket('udp4');
 
