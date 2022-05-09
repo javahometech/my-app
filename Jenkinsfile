@@ -1,3 +1,4 @@
+@Library("javahome-libs") _
 pipeline {
   agent any
 
@@ -7,16 +8,9 @@ pipeline {
           sh 'mvn clean package'
       }
     }
-    stage('Deploy to Tomcat') {
+    stage('Deploy to Dev Tomcat') {
       steps {
-        sshagent(['tomcat-dev']) {
-            // Copy war file to tomcat server
-            sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.9.112:/opt/tomcat8/webapps/app.war'
-            // stopt tomcat
-            sh "ssh ec2-user@172.31.9.112 /opt/tomcat8/bin/shutdown.sh"
-            // start tomcat
-            sh "ssh ec2-user@172.31.9.112 /opt/tomcat8/bin/startup.sh"
-        }
+        tomcatDeploy('172.31.9.112','app','tomcat-dev')
       }
     }
   }
