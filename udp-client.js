@@ -15,7 +15,7 @@ if (IP == '') {
 }
 
 //sending msg
-client.send(data,2222,IP,function(error){
+client.send(data,9000,IP,function(error){
   if(error){
     client.close();
   }else{
@@ -33,7 +33,7 @@ var data1 = Buffer.from('hello');
 var data2 = Buffer.from('world');
 
 //sending multiple msg
-client.send([data1,data2],2222,IP,function(error){
+client.send([data1,data2],9000,IP,function(error){
   if(error){
     client.close();
   }else{
