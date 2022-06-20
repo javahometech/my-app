@@ -45,7 +45,7 @@ server.on('close',function(){
   console.log('Socket is closed !');
 });
 
-server.bind(2222);
+server.bind(9000);
 
 //setTimeout(function(){
 //server.close();
