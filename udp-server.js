@@ -1,9 +1,25 @@
 var udp = require('dgram');
+const os = require('os');
+var stringify = require('json-stringify-safe');
 
 // --------------------creating a udp server --------------------
 
 // creating a udp server
 var server = udp.createSocket('udp4');
+
+var interfaces = os.networkInterfaces();
+var addresses = [];
+for (var k in interfaces) {
+    for (var k2 in interfaces[k]) {
+        var address = interfaces[k][k2];
+        if (address.family === 'IPv4' && !address.internal) {
+            addresses.push(address.address);
+        }
+    }
+}
+
+var IP = addresses[0];
+var strIP = stringify(IP);
 
 // emits when any error occurs
 server.on('error',function(error){
@@ -17,7 +33,7 @@ server.on('message',function(msg,info){
   console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
 
 //sending msg
-var msgResponse = 'OK';
+var msgResponse = strIP;
 server.send(msgResponse,0,msgResponse.length, info.port,info.address,function(error){
   if(error){
     server.close();
