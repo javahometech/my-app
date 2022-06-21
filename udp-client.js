@@ -18,25 +18,23 @@ if (IP == '') {
 client.send(data,9000,IP,function(error){
   if(error){
     client.close();
-  }else{
-    console.log('Data sent !!!');
   }
 });
 
 client.on('message',function(msg,info){
-  console.log('Data received from server : ' + msg.toString());
-  console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
+  console.log('server:' + msg.toString());
+  //console.log('Received %d bytes from %s:%d\n',msg.length, info.address, info.port);
   client.close();
 });
 
-var data1 = Buffer.from('hello');
-var data2 = Buffer.from('world');
+//var data1 = Buffer.from('hello');
+//var data2 = Buffer.from('world');
 
 //sending multiple msg
-client.send([data1,data2],9000,IP,function(error){
-  if(error){
-    client.close();
-  }else{
-    console.log('Data sent !!!');
-  }
-});
+//client.send([data1,data2],9000,IP,function(error){
+//  if(error){
+//    client.close();
+//  }else{
+//    console.log('Data sent !!!');
+//  }
+//});
