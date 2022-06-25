@@ -9,11 +9,12 @@ if (IP == '') {
 }
 var client = net.connect(8000, IP,function(){
 
-    client.name = 'clinet1';
+    client.name = 'client';
     client.write(client.name + ' is up！\n');
     //client.write(client.name + ' is up！\n' + stringRandom(102400) + '\n~~~~~~~~~~~\n');
     client.end(client.name + ' down！\n');
     client.on("data", function(data) {
         console.log(data.toString());
+        process.exit();
     });
 });
