@@ -1,4 +1,3 @@
-@Library("app-lib") _
 pipeline {
   agent any
 
