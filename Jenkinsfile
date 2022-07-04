@@ -1,9 +1,7 @@
 pipeline {
   agent any
 
-  tools {
-    maven 'maven3'
-  }
+  
   options {
     buildDiscarder logRotator(daysToKeepStr: '10', numToKeepStr: '7')
   }
