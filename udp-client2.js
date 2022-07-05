@@ -25,10 +25,9 @@ if (port == '') {
 
 //sending msg
 client.send(data,port,IP,function(error){
+  isTimeout()
   if(error){
     client.close();
-  }else{
-    console.log('Data sent !!!');
   }
 });
 
