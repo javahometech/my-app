@@ -1,6 +1,7 @@
 
 var udp = require('dgram');
 var buffer = require('buffer');
+let timer = null
 
 // creating a client socket
 var client = udp.createSocket('udp4');
@@ -32,19 +33,15 @@ client.send(data,port,IP,function(error){
 });
 
 client.on('message',function(msg,info){
-  console.log('Data received from server : ' + msg.toString());
-  console.log('Received %d bytes from %s\n',msg.length, info.address);
+  clearTimeout(timer)
+  console.log('server:' + msg.toString());
   client.close();
 });
 
-var data1 = Buffer.from('hello');
-var data2 = Buffer.from('world');
-
-//sending multiple msg
-client.send([data1,data2],port,IP,function(error){
-  if(error){
-    client.close();
-  }else{
-    console.log('Data sent from port %d !!!', port);
-  }
-});
+function isTimeout () {
+  timer = setTimeout(() => {
+      console.log('udp request timeout')
+      client.close();
+      process.exit();
+  }, 9000)
+}
