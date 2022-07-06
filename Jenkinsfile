@@ -12,7 +12,7 @@ pipeline {
     }
     stage("Deploy To Dev"){
       steps{
-        tomcatDeploy("tomcat-dev","ec2-user","172.31.13.89")
+        tomcatDeploy("tomcat-dev","ec2-user",["172.31.13.89"])
       }
     }
   }
