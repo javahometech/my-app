@@ -1,0 +1,36 @@
+pipeline{
+    agent any
+    tools {
+      maven 'maven2'
+    }
+    stages{
+        stage("Git Checkout"){
+            steps{
+                git url: "https://github.com/javahometech/my-app"
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                sh "mvn clean package"
+            }
+        }
+        
+        stage("Ansible Deploy"){
+            steps{
+               script{
+                    def pom = readMavenPom file: 'pom.xml'
+                    def name = pom.artifactId
+                    def ext = pom.packaging
+                    def version = pom.version
+                    def war_file = "${name}-${version}.${ext}"
+                    withEnv(["WAR_FILE=${war_file}"]) {
+                        ansiblePlaybook credentialsId: 'tomcat-dev', 
+                                    inventory: './ansible/dev', 
+                                    playbook: './ansible/tomcat-deploy.yml'
+                    }
+                    
+               }
+            }
+        }
+    }
+}
