@@ -2,7 +2,7 @@
   tasks:
     - name: copy war file to tomcat
       copy:
-        src: "./target/{{war_file}}"
+        src: "./target/{{ lookup('env','WAR_FILE') }}"
         dest: /opt/tomcat9/webapps/app.war
       notify:
         - stop tomcat
