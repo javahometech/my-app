@@ -17,6 +17,10 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run:
+          name: "What branch am I on now?"
+          command: echo $CIRCLE_BRANCH
+              
   print_hello:
     docker:
       - image: circleci/node:13.8.0
