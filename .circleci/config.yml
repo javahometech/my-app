@@ -28,7 +28,14 @@ jobs:
       - run:
          name: "hello"
          command: "echo hello"
-
+  notify_on_fail:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+         name: notify_on_fail
+         command: echo "found error"
+         when: on_fail
   print_world:
     docker:
       - image: circleci/node:13.8.0
