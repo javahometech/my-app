@@ -30,7 +30,8 @@ jobs:
     steps:
       - run:
           name: "world"
-          command: "echo world"        
+          command: "echo world from $Project_name"  
+                
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
