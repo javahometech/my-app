@@ -31,7 +31,7 @@ jobs:
       - run:
           name: "world"
           command: |
-             "echo world "  
+             "echo world"  
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
@@ -51,7 +51,7 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          echo ~/output.txt    
+          cat ~/output.txt    
              
                 
 
