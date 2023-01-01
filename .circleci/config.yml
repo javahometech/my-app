@@ -30,8 +30,8 @@ jobs:
     steps:
       - run:
           name: "world"
-          command: |
-             "echo world"  
+          command: "echo world" 
+              
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
