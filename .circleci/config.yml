@@ -30,7 +30,30 @@ jobs:
     steps:
       - run:
           name: "world"
-          command: "echo world from $Project_name"  
+          command: |
+             "echo world "  
+             echo $Project_name
+  save_hello_world_output:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          name: "cache"
+          command: |
+             echo "text to output here" > ~/output.txt  
+      - persist_to_workspace:
+         root: ~/
+         paths:
+           - output.txt 
+  print_output_file:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          echo ~/output.txt    
+             
                 
 
 # Invoke jobs via workflows
