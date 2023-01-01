@@ -32,7 +32,6 @@ jobs:
           name: "world"
           command: |
              "echo world "  
-             echo $Project_name
   save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
@@ -66,3 +65,8 @@ workflows:
       - print_world:
           requires:
             - print_hello
+      - save_hello_world_output
+      - print_output_file:
+          requires:
+            - save_hello_world_output
+
