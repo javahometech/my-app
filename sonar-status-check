@@ -32,7 +32,7 @@ node{
    
    stage('Email Notification'){
       mail bcc: '', body: '''Hi Welcome to jenkins email alerts
-      Thanks
+      Thank
       Hari''', cc: '', from: '', replyTo: '', subject: 'Jenkins Job', to: 'hari.kammana@gmail.com'
    }
    stage('Slack Notification'){
