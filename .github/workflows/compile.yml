@@ -1,0 +1,26 @@
+name: compile
+
+on:
+  push:
+    branches:
+      - main  # Adjust this based on your branch name
+  pull_request:
+    branches:
+      - main  # Adjust this based on your branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 11  # Adjust this based on your Java version
+
+      - name: Build and Compile
+        run: mvn clean compile  # Adjust this based on your build command
+
