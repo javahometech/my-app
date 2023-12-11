@@ -3,7 +3,7 @@ node {
     git 'https://github.com/ssg543/Jenkins-Demo/'
   }
   stage ('Compile-Package') {
-    sh 'mvn package'
+    sh 'package'
   }
 }
   
