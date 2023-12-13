@@ -17,7 +17,7 @@ node {
   stage('Approval') 
         {
         steps {
-          input ('Deploy ? ')
+          input('Deploy?')
         }
       }
   stage ('Deplpoy to Tomcat') {
