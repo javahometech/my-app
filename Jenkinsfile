@@ -14,11 +14,9 @@ node {
     def mvnHome = tool name: 'Maven-01', type: 'maven'
     sh "${mvnHome}/bin/mvn test"
   }
-  stage('Approval') 
-        {
-        steps {
-          echo "Approval Stage"_
-        }
+  stage('Approval') {
+        echo "Approval Stage"
+        input('Deploy ?')
       }
   stage ('Deplpoy to Tomcat') {
     sshagent(['Linux_Slave']) {
