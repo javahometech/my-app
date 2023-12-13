@@ -13,6 +13,6 @@ node {
 }
 }
     stage ('Email Notification') {
-      echo "Email Sent Successfully with the status of current"
+      echo "Email Sent Successfully with the status of current job"
   }
   
