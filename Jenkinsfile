@@ -15,8 +15,13 @@ node {
     sh "${mvnHome}/bin/mvn test"
   }
   stage('Approval') {
-        echo "Approval Stage"
-        input('Deploy ?')
+    steps {
+      def userInput = input(message: 'Do you want to approve ?', submitter: 'Gopi S', timeout: 5)
+      if userInput == 'Proceed') {
+        echo "Approved"
+      }
+      else {
+        echo "Approval Failed"
       }
   stage ('Deplpoy to Tomcat') {
     sshagent(['Linux_Slave']) {
