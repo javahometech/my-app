@@ -11,12 +11,10 @@ node {
     sh "${mvnHome}/bin/mvn package"
   }
   stage ('SonarQube Analysis') {
-     //withSonarQubeEnv('SonarQube')
-    {
+       //withSonarQubeEnv('SonarQube')
        //sh 'mvn sonar:sonar =Dsonar.host.url=${SONARQUBE_SERVER} -Dsonar.login=${SONARQUBE_TOKEN}'
       echo "Sonar Check Passed"
     }
-  }
   stage('Test') {
     def mvnHome = tool name: 'Maven-01', type: 'maven'
     sh "${mvnHome}/bin/mvn test"
