@@ -16,7 +16,6 @@ node {
   }
   stage('Approval') 
         {
-        agent none
         steps {
           input ('Deploy ? ')
         }
