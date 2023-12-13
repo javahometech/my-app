@@ -17,7 +17,7 @@ node {
   stage('Approval') {
     steps {
       def userInput = input(message: 'Do you want to approve ?', submitter: 'Gopi S', timeout: 5)
-      if userInput == 'Proceed') {
+      if (userInput == 'Proceed') {
         echo "Approved"
       }
       else {
