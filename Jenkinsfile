@@ -13,7 +13,10 @@ node {
   stage ('SonarQube Analysis') {
        //withSonarQubeEnv('SonarQube')
        //sh 'mvn sonar:sonar =Dsonar.host.url=${SONARQUBE_SERVER} -Dsonar.login=${SONARQUBE_TOKEN}'
-      echo "Sonar Check Passed"
+       //echo "Sonar Check Passed"
+      withSonarQubeEnv() {
+      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=Devops-Demo -Dsonar.projectName='Devops-Demo'"
+    }
     }
   stage('Test') {
     def mvnHome = tool name: 'Maven-01', type: 'maven'
