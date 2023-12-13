@@ -27,7 +27,7 @@ node {
                     if (userInput == 'Proceed') {
                         echo "Approved"
                     } else {
-                        error "Approval Failed"
+                        error "Approval Failed "
                     }
                 }
             }
