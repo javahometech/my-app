@@ -23,6 +23,8 @@ node {
       else {
         echo "Approval Failed"
       }
+    }
+  }
   stage ('Deplpoy to Tomcat') {
     sshagent(['Linux_Slave']) {
       sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.28.195:/tmp/'
