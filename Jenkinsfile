@@ -14,7 +14,7 @@ node {
     def mvnHome = tool name: 'Maven-01', type: 'maven'
     sh "${mvnHome}/bin/mvn test"
   }
-  stage('Approval) 
+  stage('Approval') 
         {
         agent none
         steps {
