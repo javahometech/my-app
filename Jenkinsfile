@@ -14,12 +14,13 @@ node {
     def mvnHome = tool name: 'Maven-01', type: 'maven'
     sh "${mvnHome}/bin/mvn test"
   }
-  stage('Approval) {
+  stage('Approval) 
+        {
         agent none
         steps {
           input ('Deploy ? ')
         }
-        }
+      }
   stage ('Deplpoy to Tomcat') {
     sshagent(['Linux_Slave']) {
       sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.28.195:/tmp/'
