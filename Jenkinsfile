@@ -11,8 +11,10 @@ node {
       sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.28.195:/tmp/'
     }
 }
+}
   post {
     stage ('Email Notification') {
       echo "Email Sent Successfully with the status of current job"
+  }
 }
   
