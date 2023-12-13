@@ -17,7 +17,7 @@ node {
   stage('Approval') 
         {
         steps {
-          input('Deploy?')
+          echo "Approval Stage"_
         }
       }
   stage ('Deplpoy to Tomcat') {
