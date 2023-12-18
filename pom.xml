@@ -51,9 +51,4 @@
    		<maven.compiler.source>7</maven.compiler.source>
    		<maven.compiler.target>1.7</maven.compiler.target>
  	</properties>
-	<plugin>
-    		<groupId>org.codehaus.mojo</groupId>
-    		<artifactId>sonar-maven-plugin</artifactId>
-    		<version>3.0.2</version>
-	</plugin>
 </project>
