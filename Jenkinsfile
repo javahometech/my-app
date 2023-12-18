@@ -17,7 +17,7 @@ node {
       //def mvnHome = tool name: 'Maven-01', type: 'maven'
       //withSonarQubeEnv('Sonar-Server') {
       //sh "${mvnHome}/bin/mvn sonar:sonar"
-    }
+    //}
     }
   stage('Test') {
     def mvnHome = tool name: 'Maven-01', type: 'maven'
