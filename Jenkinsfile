@@ -37,7 +37,7 @@ node {
         }
                 }
             }
-  stage ('Deplpoy to Server') {
+  stage ('Deplpoy to End Server') {
     sshagent(['Linux_Slave']) {
       sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@172.31.44.107:/tmp/'
     }
