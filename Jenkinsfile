@@ -16,7 +16,7 @@ node {
        //echo "Sonar Check Passed"
       def mvnHome = tool name: 'Maven-01', type: 'maven'
       withSonarQubeEnv('Sonar-Server') {
-      sh "${mvnHome}/bin/mvn sonar:sonar"
+      sh "${mvnHome}/bin/mvn -x sonar:sonar"
     }
     }
   stage('Test') {
