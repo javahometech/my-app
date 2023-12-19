@@ -41,19 +41,8 @@
                      <artifactId>nodejs_sjs0.6_2.12</artifactId>
                      <version>0.4.2</version>
                </dependency>
-		<dependency>
-    		     <groupId>org.jacoco</groupId>
-                     <artifactId>jacoco-maven-plugin</artifactId>
-                     <version>0.8.6</version>
-               </dependency>
 	</dependencies>
 	<properties>
-		<!-- JaCoCo Properties -->
-		<jacoco.version>0.8.6</jacoco.version>
-		<sonar.java.coveragePlugin>jacocosonar.java.coveragePlugin>
-		<sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
-		<sonar.jacoco.reportPath>${project.basedir}/../target/jacoco.exec</sonar.jacoco.reportPath>
-		<sonar.language>java</sonar.language> 
    		<maven.compiler.source>7</maven.compiler.source>
    		<maven.compiler.target>1.7</maven.compiler.target>
  	</properties>
