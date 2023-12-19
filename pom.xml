@@ -64,7 +64,7 @@
         <plugin>
             <groupId>org.jacoco</groupId>
             <artifactId>jacoco-maven-plugin</artifactId>
-            <version>10.3.0.82913</version> <!-- Check for the latest version -->
+            <version>0.8.11</version> <!-- Check for the latest version -->
             <executions>
                 <execution>
                     <id>prepare-agent</id>
