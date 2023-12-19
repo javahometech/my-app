@@ -15,7 +15,7 @@ node {
        //sh 'mvn sonar:sonar =Dsonar.host.url=${SONARQUBE_SERVER} -Dsonar.login=${SONARQUBE_TOKEN}'
        //echo "Sonar Check Passed"
       def mvnHome = tool name: 'Maven-01', type: 'maven'
-      withSonarQubeEnv('src') {
+      withSonarQubeEnv('Sonar-Server') {
       sh "${mvnHome}/bin/mvn sonar:sonar"
     }
     }
