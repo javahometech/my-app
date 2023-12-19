@@ -37,11 +37,6 @@
 		    <version>5.2.0</version>
 		</dependency>
 	        <dependency>
-    		     <groupId>org.jacoco</groupId>
-    	             <artifactId>jacoco-maven-plugin</artifactId>
-    		     <version>0.8.11</version>
-                </dependency>
-	        <dependency>
     		     <groupId>io.scalajs</groupId>
                      <artifactId>nodejs_sjs0.6_2.12</artifactId>
                      <version>0.4.2</version>
