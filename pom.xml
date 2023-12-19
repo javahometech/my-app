@@ -57,6 +57,11 @@
    		<maven.compiler.target>1.7</maven.compiler.target>
  	</properties>   -->
 	<properties>
+		<sonar.projectKey>Devops-Demo</sonar.projectKey>
+    		<sonar.projectName>Devops-Demo</sonar.projectName>
+    		<sonar.sources>src</sonar.sources>
+		<sonar.host.url>http://54.163.161.34:9000/</sonar.host.url>
+    		<sonar.login>sqp_8745dd0d4128fe1a38538bd4b8a252b578123cfc</sonar.login>
     		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 	</properties>
 	<build>
