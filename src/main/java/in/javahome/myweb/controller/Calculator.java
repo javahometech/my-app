@@ -1,15 +1,15 @@
-/*package in.javahome.myweb.controller;
+package in.javahome.myweb.controller;
 import java.util.List;
 /*
  * 
  */
-/*public class Calculator {
+public class Calculator {
 	/*
 	 * @param i
 	 * @param j
 	 * @return int added some comments.
 	 */
-/*	public int add(int i, int j){
+	public int add(int i, int j){
 		return i+j;
 	}
 	public int multiply(int i, int j){
@@ -20,6 +20,6 @@ import java.util.List;
 		return i%j;
 	}
 	
-} */
+}
 
 
