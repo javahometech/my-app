@@ -1,5 +1,5 @@
 node {
-  stage (' ') {
+  stage ('Git Checkout') {
     git 'https://github.com/ssg543/Jenkins-Demo/'
   }
   stage ('Compile') {
@@ -17,6 +17,7 @@ node {
       //def mvnHome = tool name: 'Maven-01', type: 'maven'
       //withSonarQubeEnv('Sonar-Server') {
       //sh "${mvnHome}/bin/mvn -e sonar:sonar"   
+    //
     //}
     }
   stage('Test') {
