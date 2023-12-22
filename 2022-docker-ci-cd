@@ -4,6 +4,7 @@ pipeline{
         stage("Git Checkout"){
             steps{
                 git url:"https://github.com/javahometech/my-app"
+//sample
             }
         }
         stage("Maven Package"){
