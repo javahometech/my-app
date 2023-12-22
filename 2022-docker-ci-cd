@@ -21,6 +21,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pwd', usernameVariable: 'user')]) {
                     sh "docker login -u ${user} -p ${pwd}"
                     sh "docker push kammana/hariapp:${env.BUILD_NUMBER}"
+//sample
                 }
                 
             }
