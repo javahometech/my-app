@@ -1,5 +1,5 @@
 node {
-  stage ('SCM Checkout') {
+  stage (' ') {
     git 'https://github.com/ssg543/Jenkins-Demo/'
   }
   stage ('Compile') {
