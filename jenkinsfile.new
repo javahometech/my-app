@@ -7,3 +7,5 @@ pipeline {
                 git 'https://github.com/artisenzubair/my-app.git'
             }
         }
+}
+}
