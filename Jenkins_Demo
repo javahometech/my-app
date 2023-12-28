@@ -1,0 +1,8 @@
+node {
+        stage('Checkout SCM') {
+                echo "git code checkout"
+            }
+        stage('Build') {
+                echo "git code Build"
+        }
+    }

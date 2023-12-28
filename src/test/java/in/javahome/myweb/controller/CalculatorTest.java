@@ -27,7 +27,7 @@ public class CalculatorTest extends TestCase {
 			prop.setProperty("dbuser", "hari");
 			prop.setProperty("dbpassword", "password");
 
-			// save properties to project root folder
+			// save properties to project root folder using maven build
 			prop.store(output, null);
 
 		}catch(
