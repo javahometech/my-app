@@ -25,6 +25,16 @@ app.get('/new/path1', function (req, res) {
   res.send("/new/path1");
 })
 
+app.get('/redirect1', function (req, res) {
+  res.status(201);
+  res.send("/redirect1");
+})
+
+app.get('/search', function (req, res) {
+  res.status(201);
+  res.send("/search");
+})
+
 app.get('/check200', function (req, res) {
   res.status(201);
   sleep(500);
