@@ -15,6 +15,16 @@ app.get('/', function (req, res) {
   res.send(msg);
 })
 
+app.get('/path1', function (req, res) {
+  res.status(201);
+  res.send("path1");
+})
+
+app.get('/new/path1', function (req, res) {
+  res.status(201);
+  res.send("/new/path1");
+})
+
 app.get('/check200', function (req, res) {
   res.status(201);
   sleep(500);
