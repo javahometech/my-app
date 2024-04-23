@@ -32,7 +32,7 @@ app.get('/redirect1', function (req, res) {
 
 app.get('/search', function (req, res) {
   res.status(201);
-  res.send("/search");
+  res.send("/search\n");
 })
 
 app.get('/check200', function (req, res) {
