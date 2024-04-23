@@ -17,17 +17,17 @@ app.get('/', function (req, res) {
 
 app.get('/path1', function (req, res) {
   res.status(201);
-  res.send("path1");
+  res.send("path1\n");
 })
 
 app.get('/new/path1', function (req, res) {
   res.status(201);
-  res.send("/new/path1");
+  res.send("/new/path1\n");
 })
 
 app.get('/redirect1', function (req, res) {
   res.status(201);
-  res.send("/redirect1");
+  res.send("/redirect1\n");
 })
 
 app.get('/search', function (req, res) {
