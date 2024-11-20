@@ -1,3 +1,8 @@
-FROM tomcat:8
-LABEL app=my-app
-COPY target/*.war /usr/local/tomcat/webapps/myweb.war
+FROM openjdk:11-jre-slim
+WORKDIR /app
+COPY target/myweb-0.0.9.war /app/
+CMD ["java", "-jar", "myweb-0.0.9.war"]
+
+
+
+
