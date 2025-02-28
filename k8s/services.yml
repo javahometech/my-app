@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: javaapp
+spec:
+  selector:
+    app: javaapp
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+    nodePort: 30000
+  type: LoadBalancer
