@@ -1,0 +1,19 @@
+name: hw workflow - Develop
+on:
+    workflow_dispatch:
+     inputs:
+        environments:
+            description: select the env
+            required: true
+            type: choice
+            options:
+                - dev
+                - sit
+                - prod
+jobs:
+    say-hw:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Say-hw
+              run: echo "Verison of app is latest - develop branch"
+    
