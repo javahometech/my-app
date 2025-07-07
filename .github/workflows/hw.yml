@@ -15,4 +15,4 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Say-hw
-              run: echo "Verison of app is latest"
+              run: echo "Environment selected is ${{github.event.inputs.environment}}"
