@@ -1,0 +1,19 @@
+name: Read Json
+on:
+  workflow_dispatch:
+
+jobs:
+  Read-Json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-code
+        uses: actions/checkout@v4
+
+      - name: read-json
+        id: read_json
+        run: |
+          name=$(jq -r '.name' config.json)
+          echo "NAME=$name" >> $GITHUB_OUTPUT
+
+      - name: use the values
+        run: echo "The name of app is: ${{ steps.read_json.outputs.NAME }}"
