@@ -1,6 +1,5 @@
 name: hw workflow
-on:
-    workflow_dispatch:
+on: [push]
 jobs:
     say-hw:
         runs-on: ubuntu-latest
