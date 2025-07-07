@@ -1,6 +1,15 @@
 name: hw workflow - Master
 on:
     workflow_dispatch:
+        inputs:
+            environment:
+                description: select the env
+                required: true
+                type: choice
+                options:
+                    - dev
+                    - sit
+                    - prod
 jobs:
     say-hw:
         runs-on: ubuntu-latest
