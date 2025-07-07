@@ -16,7 +16,7 @@ jobs:
       run: |
         NAME=$(jq -r '.name' config.json)
         echo "name=$NAME" >> $GITHUB_OUTPUT
-        VERSION:$(jq -r '.version' config.json)
+        VERSION=$(jq -r '.version' config.json)
         echo "version=$VERSION >> $GITHUB_OUTPUT
 
     - name: use the values
