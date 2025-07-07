@@ -5,5 +5,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Say-hw
-              run: echo "Verison of app is latest - dev"
+              run: echo "Verison of app is latest - develop branch"
     
