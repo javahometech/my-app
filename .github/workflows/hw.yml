@@ -1,4 +1,4 @@
-name: hw workflow
+name: hw workflow - Master
 on:
     workflow_dispatch:
 jobs:
