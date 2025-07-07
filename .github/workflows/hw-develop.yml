@@ -1,4 +1,4 @@
-name: hw workflow
+name: hw workflow - Develop
 on: [push]
 jobs:
     say-hw:
