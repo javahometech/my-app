@@ -1,5 +1,15 @@
 name: hw workflow - Develop
-on: [push]
+on:
+    workflow_dispatch:
+     inputs:
+        environments:
+            description: select the env
+            required: true
+            type: choice
+            options:
+                - dev
+                - sit
+                - prod
 jobs:
     say-hw:
         runs-on: ubuntu-latest
