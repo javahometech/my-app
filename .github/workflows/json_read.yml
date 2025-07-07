@@ -17,4 +17,5 @@ jobs:
         echo "name=$NAME" >> $GITHUB_OUTPUT
 
     - name: use the values
-      run: echo "The name of app is: ${{ steps.read_json.outputs.name }}"
+      run: |
+        echo "The name of app is: ${{ steps.read_json.outputs.name }}"
