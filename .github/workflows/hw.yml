@@ -13,6 +13,9 @@ on:
 jobs:
     say-hw:
         runs-on: ubuntu-latest
+        env:
+            dep_env:
+                ${{ github.ref_name }}
         steps:
             - name: Say-hw
-              run: echo "Environment selected is ${{github.event.inputs.environment}}"
+              run: echo "Deploying on ${dep_env}"
