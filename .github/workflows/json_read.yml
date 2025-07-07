@@ -1,6 +1,7 @@
 name: Read Json
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   Read-Json:
