@@ -4,7 +4,7 @@
 	<groupId>in.javahome</groupId>
 	<artifactId>myweb</artifactId>
 	<packaging>war</packaging>
-	<version>0.0.5</version>
+	<version>0.0.9</version>
 	<name>my-app</name>
 	<url>http://maven.apache.org</url>
 
@@ -21,8 +21,36 @@
 			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
-	
-
+		<dependency>
+		    <groupId>com.lowagie</groupId>
+		    <artifactId>itext</artifactId>
+		    <version>2.1.7</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>5.2.0</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-ooxml</artifactId>
+		    <version>5.2.0</version>
+		</dependency>
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<properties>
+   		<maven.compiler.source>7</maven.compiler.source>
+   		<maven.compiler.target>1.7</maven.compiler.target>
+ 	</properties>
 	
 </project>

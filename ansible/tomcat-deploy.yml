@@ -1,0 +1,14 @@
+- hosts: tomcat
+  tasks:
+    - name: copy war file to tomcat
+      copy:
+        src: "../target/{{ lookup('env','WAR_FILE') }}"
+        dest: /opt/tomcat9/webapps/app.war
+      notify:
+        - stop tomcat
+        - start tomcat
+  handlers:
+    - name: stop tomcat
+      command: /opt/tomcat9/bin/shutdown.sh
+    - name: start tomcat
+      command: /opt/tomcat9/bin/startup.sh

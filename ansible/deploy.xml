@@ -1,0 +1,17 @@
+- hosts: tomcats
+  tasks:
+    - name: donwload artifacats from nexus
+      maven_artifact:
+        group_id: com.company
+        artifact_id: library-name
+        repository_url: 'https://repo.company.com/maven'
+        username: user
+        password: pass
+        dest: /opt/tomcat8/webapps/myapp.war
+      notify:
+        - restart tomcat
+  handlers:
+    - name: restart tomcat
+      service:
+        name: tomcat8
+        state: restarted
