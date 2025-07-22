@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>in.javahome</groupId>
-	<artifactId>myweb</artifactId>
+	<artifactId>Jenkins_Demo</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.9</version>
 	<name>my-app</name>
@@ -36,6 +36,16 @@
 		    <artifactId>poi-ooxml</artifactId>
 		    <version>5.2.0</version>
 		</dependency>
+	        <dependency>
+    		     <groupId>io.scalajs</groupId>
+                     <artifactId>nodejs_sjs0.6_2.12</artifactId>
+                     <version>0.4.2</version>
+               </dependency>
+		<dependency>
+    		     <groupId>org.jacoco</groupId>
+                     <artifactId>jacoco-maven-plugin</artifactId>
+                     <version>0.8.6</version>
+               </dependency>
 	</dependencies>
 
 	<build>
@@ -49,8 +59,34 @@
 	</build>
 	
 	<properties>
-   		<maven.compiler.source>7</maven.compiler.source>
-   		<maven.compiler.target>1.7</maven.compiler.target>
- 	</properties>
-	
+		<sonar.projectKey>Devops-Demo</sonar.projectKey>
+    		<sonar.projectName>Devops-Demo</sonar.projectName>
+    		<sonar.sources>src</sonar.sources>
+		<sonar.host.url>http://54.163.161.34:9000/</sonar.host.url>
+    		<sonar.login>sqp_8745dd0d4128fe1a38538bd4b8a252b578123cfc</sonar.login>
+    		<sonar.coverage.jacoco.xmlReportPaths>target/site/jacoco/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+	</properties> 
+	<build>
+    <plugins>
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.11</version> <!-- Check for the latest version -->
+            <executions>
+                <execution>
+                    <id>prepare-agent</id>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>report</id>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
 </project>

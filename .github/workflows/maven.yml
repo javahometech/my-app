@@ -1,6 +1,7 @@
-name: Java CI
+name: Java CI workflow
 
-on: [push]
+on:
+  workflow_dispatch:
 
 jobs:
   build:

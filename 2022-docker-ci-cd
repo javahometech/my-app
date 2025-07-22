@@ -4,6 +4,7 @@ pipeline{
         stage("Git Checkout"){
             steps{
                 git url:"https://github.com/javahometech/my-app"
+//sample
             }
         }
         stage("Maven Package"){
@@ -21,6 +22,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'pwd', usernameVariable: 'user')]) {
                     sh "docker login -u ${user} -p ${pwd}"
                     sh "docker push kammana/hariapp:${env.BUILD_NUMBER}"
+//sample
                 }
                 
             }

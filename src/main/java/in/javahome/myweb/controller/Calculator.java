@@ -7,7 +7,7 @@ public class Calculator {
 	/*
 	 * @param i
 	 * @param j
-	 * @return int
+	 * @return int added some comments.
 	 */
 	public int add(int i, int j){
 		return i+j;
@@ -21,3 +21,5 @@ public class Calculator {
 	}
 	
 }
+
+

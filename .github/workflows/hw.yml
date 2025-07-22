@@ -1,0 +1,15 @@
+name: hw workflow - Master
+on:
+    push:
+        branches:
+            - dev
+            - sit
+jobs:
+    say-hw:
+        runs-on: ubuntu-latest
+        env:
+            dep_env:
+                ${{ github.ref_name }}
+        steps:
+            - name: Say-hw
+              run: echo "Deploying on ${dep_env}"
