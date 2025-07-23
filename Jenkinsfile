@@ -17,9 +17,9 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
-        stage("Tomcat Deploy"){
+        stage("Tomcat Deploy Dev"){
             steps{
-                tomcatDeploy()
+                tomcatDeploy("tomcat-dev",TOMCAT_USER,TOMCAT_IP)
             }
         }
     }
