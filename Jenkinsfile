@@ -1,3 +1,5 @@
+@Library("jhc-libs") _
+
 pipeline{
     agent any
     environment{
@@ -17,13 +19,7 @@ pipeline{
         }
         stage("Tomcat Deploy"){
             steps{
-                sshagent(['tomcat-dev']) {
-                    // Copy War file to Tomcat
-                    sh "scp -o StrictHostKeyChecking=no target/*.war ${TOMCAT_USER}@${TOMCAT_IP}:/opt/tomcat10/webapps/"
-                    // Stop and start Tomcat
-                    sh "ssh ${TOMCAT_USER}@${TOMCAT_IP} /opt/tomcat10/bin/shutdown.sh"
-                    sh "ssh ${TOMCAT_USER}@${TOMCAT_IP} /opt/tomcat10/bin/startup.sh"
-                }
+                tomcatDeploy()
             }
         }
     }
