@@ -22,7 +22,6 @@ pipeline{
                     sh "docker login -u ${user} -p ${pwd}"
                     sh "docker push kammana/hariapp:${env.BUILD_NUMBER}"
                 }
-                
             }
         }
         stage("Docker Deploy Dev"){
