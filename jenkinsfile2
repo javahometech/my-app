@@ -1,0 +1,16 @@
+node{
+    stage ('scm-checkout'){
+       git 'https://github.com/ravi-dev/my-app'
+    }
+    stage ('compile-package'){
+       //get maven home path
+       def mvnhome = tool name: 'maven3', type: 'maven'
+       sh "${mvnhome}/bin/mvn package"
+    }
+    stage('Deploy to Tomcat'){
+      
+    sshagent(['tomcat-dev']) {
+       sh 'scp -o StrictHostKeyChecking=no target/*.war ec2-user@13.232.210.200:/usr/share/locale/tomcat8/webapps/'
+      }
+    }  
+}
