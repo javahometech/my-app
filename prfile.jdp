@@ -1,0 +1,27 @@
+pipeline{
+    agent any
+    stages{
+        stage('Run on PR'){
+            checkout(
+                [
+                    $class: 'GitSCM', 
+                    branches: [[name: '*/master']],
+                    doGenerateSubmoduleConfigurations: false, 
+                    extensions: [], submoduleCfg: [], 
+                    userRemoteConfigs: [[
+                        credentialsId: '8c61b560-7b58-4a03-b005-fbda42c8491d',
+                        name: 'origin', 
+                        refspec: '+refs/pull-requests/*/from:refs/remotes/origin/pr/*/from', 
+                        url: 'https://github.com/RANIRAJA/my-app.git'
+                        ]]
+                        ])
+        }
+        stage('Merge'){
+            steps{
+                ([$class: 'GhprbPullRequestMerge'])
+                
+            }            
+        }
+        
+    }
+}

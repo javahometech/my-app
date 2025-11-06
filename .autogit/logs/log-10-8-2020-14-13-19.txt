@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Thu Sep 10 2020 14:13:19 GMT+0530 (India Standard Time)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .gitignore
+* 2019-Aug-9
+
+
+Deleted files:
+* 2019-Aug-9:30Am-jenkinsfile
+
+
+Renamed files:
