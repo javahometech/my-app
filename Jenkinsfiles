@@ -1,0 +1,8 @@
+node{
+stage ('SCM Checkout'){
+git 'https://github.com/jenkinsmohan/my-app'
+}
+stage ('Complete-Package'){
+sh 'mvn package'
+}
+}
