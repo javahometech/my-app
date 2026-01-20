@@ -1,0 +1,8 @@
+node {
+stage ('SCM Chekout') {
+    git 'https://github.com/javahometech/my-app'
+}
+stage ('Compile-package-mvn') {
+    sh ' mvn package'
+}
+}
