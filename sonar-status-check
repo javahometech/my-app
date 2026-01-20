@@ -22,7 +22,7 @@ node{
                    slackSend baseUrl: 'https://hooks.slack.com/services/',
                    channel: '#jenkins-pipeline-demo',
                    color: 'danger', 
-                   message: 'SonarQube Analysis Failed', 
+                   message: 'SonarQube Analysis Failed1', 
                    teamDomain: 'javahomecloud',
                    tokenCredentialId: 'slack-demo'
                   error "Pipeline aborted due to quality gate failure: ${qg.status}"
